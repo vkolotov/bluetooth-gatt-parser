@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Particulate Matter - PM2.5 Concentration" type="org.bluetooth.characteristic.particulate_matter_pm2_5_concentration" uuid="2BD6" approved="No">
+  <Value>
+    <Field name="Particulate Matter - PM2.5 Concentration">
+      <Format>medfloat16</Format>
+      <Unit>org.bluetooth.unit.density.kilogram_per_cubic_meter</Unit>
+    </Field>
+  </Value>
+</Characteristic>

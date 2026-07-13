@@ -2,24 +2,34 @@
 
 A **simple** library/framework to work with Bluetooth Smart (BLE) GATT services and characteristics.
 
-Note: This is a fork from the no longer maintained project at https://github.com/sputnikdev/bluetooth-gatt-parser.
+> This is a fork of the no longer maintained project at
+> https://github.com/sputnikdev/bluetooth-gatt-parser.
 
-Have a look at an example of parsing a standard characteristic ([Battery Level 0x2A19](https://www.bluetooth.com/specifications/gatt/viewer?attributeXmlFile=org.bluetooth.characteristic.battery_level.xml)) value:
+Parsing a standard characteristic (Battery Level, `0x2A19`) is a one-liner:
+
 ```java
 BluetoothGattParserFactory.getDefault().parse("2A19", new byte[] {51}).get("Level").getInteger(null);
 ```
-This would print 51.
 
-**Features:**
+This prints `51`.
 
-1. Supports 99% of the existing/standard [GATT services and characteristics specifications](https://www.bluetooth.com/specifications/gatt).
-2. Parse/read single and multi field characteristics into a user-friendly data format.
-3. Writing single and multi field characteristics.
-4. Validating input data whether it conforms to GATT specifications (format types and mandatory fields).
-5. Extensibility. User defined services and characteristics.
-6. Support for all defined [format types](https://www.bluetooth.com/specifications/assigned-numbers/format-types).
+## Features
 
-**Start using the library by including a maven dependency in your project:**
+1. Ships the standard [Bluetooth SIG GATT services and characteristics](https://www.bluetooth.com/specifications/assigned-numbers/), plus a number
+   of characteristics recovered from the SIG's retired characteristic XML and
+   generated from the current [GATT Specification Supplement](https://www.bluetooth.com/specifications/gss/).
+2. Parses single- and multi-field characteristics into a user-friendly data format.
+3. Serializes (writes) single- and multi-field characteristics.
+4. Validates input against the GATT specification (format types and mandatory fields).
+5. Supports variable-length array fields (e.g. the RR-Interval list in Heart Rate Measurement).
+6. Extensible: user-defined services and characteristics via drop-in XML.
+7. Supports all defined [format types](https://www.bluetooth.com/specifications/assigned-numbers/), including the
+   IEEE-11073 `SFLOAT`/`FLOAT` (GSS `medfloat16`/`medfloat32`) types.
+
+## Usage
+
+Add the Maven dependency:
+
 ```xml
 <dependency>
   <groupId>org.openhab</groupId>
@@ -28,66 +38,72 @@ This would print 51.
 </dependency>
 ```
 
-A more complex example of parsing multi-field characteristics ([Heart Rate service](https://www.bluetooth.com/specifications/gatt/viewer?attributeXmlFile=org.bluetooth.service.heart_rate.xml)):
+Reading and writing multi-field characteristics:
 
 ```java
-// Getting a default implementation which is capable of reading/writing the standard GATT services and characteristics
+// A default parser that reads/writes the bundled standard GATT services and characteristics.
 BluetoothGattParser parser = BluetoothGattParserFactory.getDefault();
 
-// Reading Body Sensor Location (0x2A38) characteristic (sigle field)
-byte[] data = new byte[] {1}; // 1 == Chest
-GattResponse response = parser.parse("2A38", data);
-String sensorLocation = response.get("Body Sensor Location").getInteger(null); // prints 1 (Chest)
+// Read Body Sensor Location (0x2A38) — a single-field characteristic.
+GattResponse response = parser.parse("2A38", new byte[] {1}); // 1 == Chest
+int sensorLocation = response.get("Body Sensor Location").getInteger(null); // 1 (Chest)
 
-// Reading Heart Rate Measurement (0x2A37) characteristic (multi field)
-byte[] data = new byte[] {20, 74, 13, 3};
-GattResponse response = parser.parse("2A37", data);
-String heartRateValue = response.get("Heart Rate Measurement Value (uint8)").getInteger(null); // prints 74
-String rrIntervalValue = response.get("RR-Interval").getInteger(null); // prints 781
+// Read Heart Rate Measurement (0x2A37) — a multi-field characteristic.
+response = parser.parse("2A37", new byte[] {20, 74, 13, 3});
+int heartRate = response.get("Heart Rate Measurement Value (8 bit resolution)").getInteger(null); // 74
 
-// Writing Heart Rate Control Point (0x2A39) characteristic
+// Write Heart Rate Control Point (0x2A39).
 GattRequest request = parser.prepare("2A39");
-request.setField("Heart Rate Control Point", 1); // control value to be sent to a bluetooth device
+request.setField("Heart Rate Control Point", 1);
 byte[] data = parser.serialize(request);
 ```
 
-See more examples in the integration tests: [GenericCharacteristicParserIntegrationTest](src/test/java/org/bluetooth/gattparser/GenericCharacteristicParserIntegrationTest.java)
+See more in the integration tests:
+[GenericCharacteristicParserIntegrationTest](src/test/java/org/openhab/bluetooth/gattparser/GenericCharacteristicParserIntegrationTest.java).
 
----
-**Extending the library with user defined services and characteristics**
+## Extending with user-defined services and characteristics
 
-The gatt-parser library is designed to be able to add support for some new custom services/characteristics or to override an existing ("approved") [service and characteristic](https://www.bluetooth.com/specifications/gatt). This can be done by just providing a new GATT XML file which specifies your service and characteristic (have a look at the standard definition for the [Battery Level characteristic](src/main/resources/gatt/characteristic/org.bluetooth.characteristic.battery_level.xml)). The library will read your custom files and build internal rules/conditions for parsing and serialization of your custom characteristics. This means you don't have to write any code to parse/serialize simple or complex custom characteristics.
-
-_Loading XML GATT specification files (GATT-like specifications) from a folder:_
+The library can add support for custom services/characteristics, or override a
+bundled one, purely by providing a GATT XML file — no code required. See the
+bundled [Battery Level characteristic](src/main/resources/gatt/characteristic/org.bluetooth.characteristic.battery_level.xml)
+for the schema.
 
 ```java
 BluetoothGattParser parser = BluetoothGattParserFactory.getDefault();
-File extensionsFolderFile = new File(..);
-gattParser.loadExtensionsFromFolder(extensions);
+parser.loadExtensionsFromFolder(new File("/path/to/gatt-extensions"));
 ```
 
-**A custom parser can be added for a characteristic if you are not satisfied with the default one**
+If the generic parser is not enough for a given characteristic, register your own:
 
-See the default one for a hint and a reference: [GenericCharacteristicParser](src/main/java/org/bluetooth/gattparser/GenericCharacteristicParser.java)
 ```java
 BluetoothGattParser parser = BluetoothGattParserFactory.getDefault();
-CharacteristicParser customParser = new ...; // your own implementation
-parser.registerParser(CHARACTERISTIC_UUID, customParser);
+parser.registerParser(CHARACTERISTIC_UUID, myCustomParser);
 ```
 
----
+## Bundled GATT specifications
+
+Each characteristic/service is one XML file under `src/main/resources/gatt/`. A
+build-time generator indexes them into `gatt_spec_registry.json` (the `type`
+attribute of each file must equal its filename).
+
+The Bluetooth SIG **retired** the machine-readable characteristic XML repository
+around 2019. Since then it publishes the [GATT Specification Supplement (GSS)](https://www.bluetooth.com/specifications/gss/)
+as YAML, where the field structure is present but scaling/unit/presence are
+encoded as a rigid mini-grammar inside prose. The characteristics added here were
+derived from that GSS: scalars are high fidelity, while cases the prose cannot
+express unambiguously carry an inline `<!-- REVIEW -->` marker rather than a
+fabricated value.
+
 ## Contribution
 
-You are welcome to contribute to the project.
+Contributions are welcome. Build with Maven:
 
-The build process is streamlined by using standard maven tools. 
-
-To build the project with maven:
 ```bash
 mvn clean install
 ```
 
-To cut a new release and upload it to the Maven Central Repository:
+Cut a release to Maven Central:
+
 ```bash
 mvn release:prepare -B
 mvn release:perform

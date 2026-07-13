@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="High Voltage" type="org.bluetooth.characteristic.high_voltage" uuid="2BE0" approved="No">
+  <Value>
+    <Field name="High Voltage">
+      <Format>uint24</Format>
+      <BinaryExponent>6</BinaryExponent>
+      <Unit>org.bluetooth.unit.electric_potential_difference.volt</Unit>
+      <Minimum>0.0</Minimum>
+      <Maximum>262143.97</Maximum>
+    </Field>
+  </Value>
+</Characteristic>

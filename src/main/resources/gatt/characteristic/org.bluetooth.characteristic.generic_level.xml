@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Generic Level" type="org.bluetooth.characteristic.generic_level" uuid="2AF9" approved="No">
+  <Value>
+    <Field name="Generic Level">
+      <Format>uint16</Format>
+      <Minimum>0</Minimum>
+      <Maximum>65535</Maximum>
+      <!-- REVIEW: scaling present but no unit found in prose -->
+    </Field>
+  </Value>
+</Characteristic>

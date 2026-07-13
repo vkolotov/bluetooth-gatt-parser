@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Perceived Lightness" type="org.bluetooth.characteristic.perceived_lightness" uuid="2B03" approved="No">
+  <Value>
+    <Field name="Perceived Lightness">
+      <Format>uint16</Format>
+      <Minimum>0</Minimum>
+      <Maximum>65535</Maximum>
+      <!-- REVIEW: scaling present but no unit found in prose -->
+    </Field>
+  </Value>
+</Characteristic>

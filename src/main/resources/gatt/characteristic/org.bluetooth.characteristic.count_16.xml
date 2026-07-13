@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Count 16" type="org.bluetooth.characteristic.count_16" uuid="2AEA" approved="No">
+  <Value>
+    <Field name="Count">
+      <Format>uint16</Format>
+      <Minimum>0</Minimum>
+      <Maximum>65534</Maximum>
+      <!-- REVIEW: scaling present but no unit found in prose -->
+    </Field>
+  </Value>
+</Characteristic>

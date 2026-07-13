@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Average Current" type="org.bluetooth.characteristic.average_current" uuid="2AE0" approved="No">
+  <Value>
+    <Field name="Electric Current Value">
+      <Reference>org.bluetooth.characteristic.electric_current</Reference>
+    </Field>
+    <Field name="Sensing Duration">
+      <Reference>org.bluetooth.characteristic.time_exponential_8</Reference>
+    </Field>
+  </Value>
+</Characteristic>

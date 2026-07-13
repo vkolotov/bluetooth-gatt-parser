@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="CO2 Concentration" type="org.bluetooth.characteristic.co2_concentration" uuid="2B8C" approved="No">
+  <Value>
+    <Field name="CO2 Concentration">
+      <Format>uint16</Format>
+      <Unit>org.bluetooth.unit.ppm</Unit>
+    </Field>
+  </Value>
+</Characteristic>

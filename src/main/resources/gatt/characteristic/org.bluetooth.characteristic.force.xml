@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Force" type="org.bluetooth.characteristic.force" uuid="2C07" approved="No">
+  <Value>
+    <Field name="Force">
+      <Format>sint32</Format>
+      <DecimalExponent>-3</DecimalExponent>
+      <Unit>org.bluetooth.unit.force.newton</Unit>
+    </Field>
+  </Value>
+</Characteristic>

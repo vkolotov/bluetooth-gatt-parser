@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Relative Value in an Illuminance Range" type="org.bluetooth.characteristic.relative_value_in_an_illuminance_range" uuid="2B0A" approved="No">
+  <Value>
+    <Field name="Relative Value">
+      <Reference>org.bluetooth.characteristic.percentage_8</Reference>
+    </Field>
+    <Field name="Minimum Illuminance">
+      <Reference>org.bluetooth.characteristic.illuminance</Reference>
+    </Field>
+    <Field name="Maximum Illuminance">
+      <Reference>org.bluetooth.characteristic.illuminance</Reference>
+    </Field>
+  </Value>
+</Characteristic>

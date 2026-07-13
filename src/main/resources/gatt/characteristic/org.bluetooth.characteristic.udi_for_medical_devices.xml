@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="UDI for Medical Devices" type="org.bluetooth.characteristic.udi_for_medical_devices" uuid="2BFF" approved="No">
+  <Value>
+    <Field name="Flags">
+      <BitField>
+        <Bit index="0" size="1" name="C0">
+          <Enumerations>
+            <Enumeration key="1" requires="C0"/>
+          </Enumerations>
+        </Bit>
+        <Bit index="1" size="1" name="C1">
+          <Enumerations>
+            <Enumeration key="1" requires="C1"/>
+          </Enumerations>
+        </Bit>
+        <Bit index="2" size="1" name="C2">
+          <Enumerations>
+            <Enumeration key="1" requires="C2"/>
+          </Enumerations>
+        </Bit>
+        <Bit index="3" size="1" name="C3">
+          <Enumerations>
+            <Enumeration key="1" requires="C3"/>
+          </Enumerations>
+        </Bit>
+      </BitField>
+    </Field>
+    <Field name="UDI Label">
+      <Format>utf8s</Format>
+      <Requirement>C0</Requirement>
+    </Field>
+    <Field name="UDI Device Identifier">
+      <Format>utf8s</Format>
+      <Requirement>C1</Requirement>
+    </Field>
+    <Field name="UDI Issuer">
+      <Format>utf8s</Format>
+      <Requirement>C2</Requirement>
+    </Field>
+    <Field name="UDI Authority">
+      <Format>utf8s</Format>
+      <Requirement>C3</Requirement>
+    </Field>
+  </Value>
+</Characteristic>

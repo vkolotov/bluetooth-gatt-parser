@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Recipe Control" type="org.bluetooth.characteristic.recipe_control" uuid="2C26" approved="No">
+  <Value>
+    <Field name="Op Code">
+      <Format>uint8</Format>
+    </Field>
+    <Field name="Cooking Step Index">
+      <Format>uint16</Format>
+    </Field>
+  </Value>
+</Characteristic>

@@ -33,21 +33,7 @@ public class TwosComplementNumberFormatter implements RealNumberFormatter {
         if (size > 32) {
             throw new IllegalArgumentException("size must be less or equal 32");
         }
-
-        if (size == 1) {
-            signed = false;
-        }
-
-        boolean isNegative = signed && size > 1 && bits.get(size - 1);
-        int value = isNegative ? -1 : 0;
-        for (int i = 0; i < bits.length() && i < size; i++) {
-            if (isNegative && !bits.get(i)) {
-                value ^= 1 << i;
-            } else if (!isNegative && bits.get(i)) {
-                value |= 1 << i;
-            }
-        }
-        return value;
+        return (int) deserialize(bits, size, signed);
     }
 
     @Override
@@ -55,19 +41,28 @@ public class TwosComplementNumberFormatter implements RealNumberFormatter {
         if (size > 64) {
             throw new IllegalArgumentException("size must be less or equal than 64");
         }
+        return deserialize(bits, size, signed);
+    }
 
+    /**
+     * Reads up to 64 bits, little-endian, into a long and sign-extends when required. The BitSet
+     * already holds the bits little-endian (bit 0 = LSB), so a straight accumulation of the low
+     * {@code size} bits yields the unsigned magnitude; a set top bit under two's-complement is then
+     * extended into the unused high bits.
+     */
+    private long deserialize(BitSet bits, int size, boolean signed) {
         if (size == 1) {
             signed = false;
         }
-
-        boolean isNegative = signed && size > 1 && bits.get(size - 1);
-        long value = isNegative ? -1L : 0L;
-        for (int i = 0; i < bits.length() && i < size; i++) {
-            if (isNegative && !bits.get(i)) {
-                value ^= 1L << i;
-            } else if (!isNegative && bits.get(i)) {
+        long value = 0L;
+        int limit = Math.min(size, bits.length());
+        for (int i = 0; i < limit; i++) {
+            if (bits.get(i)) {
                 value |= 1L << i;
             }
+        }
+        if (signed && size > 1 && size < 64 && (value & (1L << (size - 1))) != 0) {
+            value |= -(1L << size); // sign-extend the two's-complement top bit
         }
         return value;
     }

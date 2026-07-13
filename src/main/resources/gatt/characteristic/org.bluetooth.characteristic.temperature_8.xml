@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Temperature 8" type="org.bluetooth.characteristic.temperature_8" uuid="2B0D" approved="No">
+  <Value>
+    <Field name="Temperature 8">
+      <Format>sint8</Format>
+      <BinaryExponent>-1</BinaryExponent>
+      <Unit>org.bluetooth.unit.thermodynamic_temperature.degree_celsius</Unit>
+      <Minimum>-64.0</Minimum>
+      <Maximum>63.0</Maximum>
+    </Field>
+  </Value>
+</Characteristic>

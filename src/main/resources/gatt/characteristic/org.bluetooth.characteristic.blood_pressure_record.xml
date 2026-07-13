@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Blood Pressure Record" type="org.bluetooth.characteristic.blood_pressure_record" uuid="2B36" approved="No">
+  <Value>
+    <Field name="Segmentation Header">
+      <BitField>
+        <Bit index="0" size="1" name="C0">
+          <Enumerations>
+            <Enumeration key="1" requires="C0"/>
+          </Enumerations>
+        </Bit>
+        <Bit index="1" size="1" name="C1">
+          <Enumerations>
+            <Enumeration key="1" requires="C1"/>
+          </Enumerations>
+        </Bit>
+      </BitField>
+    </Field>
+    <Field name="Sequence Number">
+      <Format>uint16</Format>
+    </Field>
+    <Field name="UUID">
+      <Format>uint16</Format>
+    </Field>
+    <Field name="Recorded Characteristic">
+      <Format>Determined by UUID</Format>
+    </Field>
+    <Field name="E2E-CRC">
+      <Format>uint16</Format>
+    </Field>
+  </Value>
+</Characteristic>

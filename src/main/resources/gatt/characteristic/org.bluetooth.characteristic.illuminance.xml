@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Illuminance" type="org.bluetooth.characteristic.illuminance" uuid="2AFB" approved="No">
+  <Value>
+    <Field name="Illuminance">
+      <Format>uint24</Format>
+      <DecimalExponent>-2</DecimalExponent>
+      <Unit>org.bluetooth.unit.illuminance.lux</Unit>
+      <Minimum>0</Minimum>
+      <Maximum>167772.14</Maximum>
+    </Field>
+  </Value>
+</Characteristic>

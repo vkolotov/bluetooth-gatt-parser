@@ -115,6 +115,13 @@ public class MockUtils {
         return field;
     }
 
+    public static Field mockRepeatedFieldFormat(String name, String format, int repeats) {
+        Field field = mockFieldFormat(name, format);
+        when(field.getRepeats()).thenReturn(repeats);
+        when(field.isRepeated()).thenReturn(true);
+        return field;
+    }
+
     public static Enumeration mockEnumeration(Integer key, String flag) {
         Enumeration enumeration = mock(Enumeration.class);
         when(enumeration.getKey()).thenReturn(BigInteger.valueOf(key));

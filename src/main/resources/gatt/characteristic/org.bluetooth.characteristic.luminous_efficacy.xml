@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Luminous Efficacy" type="org.bluetooth.characteristic.luminous_efficacy" uuid="2AFC" approved="No">
+  <Value>
+    <Field name="Luminous Efficacy">
+      <Format>uint16</Format>
+      <DecimalExponent>-1</DecimalExponent>
+      <Unit>org.bluetooth.unit.luminous_efficacy.lumen_per_watt</Unit>
+      <Minimum>0</Minimum>
+      <Maximum>1800</Maximum>
+    </Field>
+  </Value>
+</Characteristic>

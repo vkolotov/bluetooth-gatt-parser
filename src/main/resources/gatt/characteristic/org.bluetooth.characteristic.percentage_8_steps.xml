@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Percentage 8 Steps" type="org.bluetooth.characteristic.percentage_8_steps" uuid="2C05" approved="No">
+  <Value>
+    <Field name="Percentage 8 Steps">
+      <Format>uint8</Format>
+      <Unit>org.bluetooth.unit.unitless</Unit>
+      <Minimum>1</Minimum>
+      <Maximum>200</Maximum>
+    </Field>
+  </Value>
+</Characteristic>

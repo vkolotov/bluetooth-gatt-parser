@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Battery Health Information" type="org.bluetooth.characteristic.battery_health_information" uuid="2BEB" approved="No">
+  <Value>
+    <Field name="Flags">
+      <BitField>
+        <Bit index="0" size="1" name="C0">
+          <Enumerations>
+            <Enumeration key="1" requires="C0"/>
+          </Enumerations>
+        </Bit>
+        <Bit index="1" size="1" name="C1">
+          <Enumerations>
+            <Enumeration key="1" requires="C1"/>
+          </Enumerations>
+        </Bit>
+      </BitField>
+    </Field>
+    <Field name="Cycle Count Designed Lifetime">
+      <Format>uint16</Format>
+      <Requirement>C0</Requirement>
+    </Field>
+    <Field name="Min Designed Operating Temperature">
+      <Format>sint8</Format>
+      <Unit>org.bluetooth.unit.thermodynamic_temperature.degree_celsius</Unit>
+      <Requirement>C1</Requirement>
+    </Field>
+    <Field name="Max Designed Operating Temperature">
+      <Format>sint8</Format>
+      <Unit>org.bluetooth.unit.thermodynamic_temperature.degree_celsius</Unit>
+      <Requirement>C1</Requirement>
+    </Field>
+  </Value>
+</Characteristic>

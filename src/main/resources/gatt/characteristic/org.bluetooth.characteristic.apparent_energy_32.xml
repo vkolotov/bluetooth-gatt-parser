@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Apparent Energy 32" type="org.bluetooth.characteristic.apparent_energy_32" uuid="2B89" approved="No">
+  <Value>
+    <Field name="Apparent Energy 32">
+      <Format>uint32</Format>
+      <DecimalExponent>-3</DecimalExponent>
+      <Minimum>0</Minimum>
+      <Maximum>4294967.293</Maximum>
+      <!-- REVIEW: scaling present but no unit found in prose -->
+    </Field>
+  </Value>
+</Characteristic>

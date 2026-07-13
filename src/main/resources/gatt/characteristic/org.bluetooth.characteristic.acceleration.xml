@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Acceleration" type="org.bluetooth.characteristic.acceleration" uuid="2C06" approved="No">
+  <Value>
+    <Field name="Acceleration">
+      <Format>sint32</Format>
+      <DecimalExponent>-3</DecimalExponent>
+      <Unit>org.bluetooth.unit.acceleration.metres_per_seconds_squared</Unit>
+    </Field>
+  </Value>
+</Characteristic>

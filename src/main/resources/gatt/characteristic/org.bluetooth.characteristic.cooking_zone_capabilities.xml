@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Cooking Zone Capabilities" type="org.bluetooth.characteristic.cooking_zone_capabilities" uuid="2C29" approved="No">
+  <Value>
+    <Field name="Flags">
+      <BitField>
+      </BitField>
+    </Field>
+    <Field name="Power Technology">
+      <Format>uint8</Format>
+    </Field>
+    <Field name="Number of Cooking Steps">
+      <Format>uint16</Format>
+    </Field>
+    <Field name="Nominal Power">
+      <Format>struct</Format>
+      <!-- REVIEW: unresolved struct reference -->
+    </Field>
+    <Field name="Boost Level">
+      <Format>uint8</Format>
+      <Unit>org.bluetooth.unit.percentage</Unit>
+      <Minimum>0</Minimum>
+      <Maximum>255</Maximum>
+      <Requirement>C1</Requirement>
+    </Field>
+    <Field name="Minimum Available Power">
+      <Format>struct</Format>
+      <!-- REVIEW: unresolved struct reference -->
+    </Field>
+    <Field name="Maximum Temperature">
+      <Format>struct</Format>
+      <!-- REVIEW: unresolved struct reference -->
+    </Field>
+    <Field name="Minimum Temperature">
+      <Format>struct</Format>
+      <!-- REVIEW: unresolved struct reference -->
+    </Field>
+    <Field name="Maximum Blower Fan Airflow">
+      <Format>struct</Format>
+      <!-- REVIEW: unresolved struct reference -->
+    </Field>
+  </Value>
+</Characteristic>

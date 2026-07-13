@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Recipe Parameters" type="org.bluetooth.characteristic.recipe_parameters" uuid="2C27" approved="No">
+  <Value>
+    <Field name="Flags">
+      <BitField>
+      </BitField>
+    </Field>
+    <Field name="Cooking Step Index">
+      <Format>uint16</Format>
+    </Field>
+    <Field name="Cooking Process Type">
+      <Format>uint8</Format>
+    </Field>
+    <Field name="Duration">
+      <Format>uint16</Format>
+      <!-- REVIEW: unparsed presence condition -->
+    </Field>
+    <Field name="Temperature">
+      <Format>struct</Format>
+      <!-- REVIEW: unresolved struct reference -->
+    </Field>
+    <Field name="Temperature Gradient">
+      <Format>uint8</Format>
+      <DecimalExponent>-1</DecimalExponent>
+      <Unit>org.bluetooth.unit.kelvin_per_second</Unit>
+      <Minimum>-12.8</Minimum>
+      <Maximum>12.7</Maximum>
+      <!-- REVIEW: unparsed presence condition -->
+    </Field>
+    <Field name="Humidity">
+      <Format>struct</Format>
+      <!-- REVIEW: unresolved struct reference -->
+    </Field>
+    <Field name="Termination Condition">
+      <BitField>
+      </BitField>
+    </Field>
+  </Value>
+</Characteristic>

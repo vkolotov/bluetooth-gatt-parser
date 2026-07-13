@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Relative Runtime in a Generic Level Range" type="org.bluetooth.characteristic.relative_runtime_in_a_generic_level_range" uuid="2B08" approved="No">
+  <Value>
+    <Field name="Relative Value">
+      <Reference>org.bluetooth.characteristic.percentage_8</Reference>
+    </Field>
+    <Field name="Minimum Generic Level">
+      <Reference>org.bluetooth.characteristic.generic_level</Reference>
+    </Field>
+    <Field name="Maximum Generic Level">
+      <Reference>org.bluetooth.characteristic.generic_level</Reference>
+    </Field>
+  </Value>
+</Characteristic>

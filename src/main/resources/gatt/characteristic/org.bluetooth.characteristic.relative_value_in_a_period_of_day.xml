@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Relative Value in a Period of Day" type="org.bluetooth.characteristic.relative_value_in_a_period_of_day" uuid="2B0B" approved="No">
+  <Value>
+    <Field name="Relative Value">
+      <Reference>org.bluetooth.characteristic.percentage_8</Reference>
+    </Field>
+    <Field name="Start Time">
+      <Reference>org.bluetooth.characteristic.time_decihour_8</Reference>
+    </Field>
+    <Field name="End Time">
+      <Reference>org.bluetooth.characteristic.time_decihour_8</Reference>
+    </Field>
+  </Value>
+</Characteristic>

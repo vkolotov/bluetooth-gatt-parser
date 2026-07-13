@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Four Zone Heart Rate Limits" type="org.bluetooth.characteristic.four_zone_heart_rate_limits" uuid="2B4C" approved="No">
+  <Value>
+    <Field name="Four Zone Heart Rate Limits - Light / Moderate Limit">
+      <Format>uint8</Format>
+      <Unit>org.bluetooth.unit.period.beats_per_minute</Unit>
+    </Field>
+    <Field name="Four Zone Heart Rate Limits - Moderate / Hard Limit">
+      <Format>uint8</Format>
+      <Unit>org.bluetooth.unit.period.beats_per_minute</Unit>
+    </Field>
+    <Field name="Four Zone Heart Rate Limits - Hard / Maximum Limit">
+      <Format>uint8</Format>
+      <Unit>org.bluetooth.unit.period.beats_per_minute</Unit>
+    </Field>
+  </Value>
+</Characteristic>

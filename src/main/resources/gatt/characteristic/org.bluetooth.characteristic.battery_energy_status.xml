@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Battery Energy Status" type="org.bluetooth.characteristic.battery_energy_status" uuid="2BF0" approved="No">
+  <Value>
+    <Field name="Flags">
+      <BitField>
+        <Bit index="0" size="1" name="C0">
+          <Enumerations>
+            <Enumeration key="1" requires="C0"/>
+          </Enumerations>
+        </Bit>
+        <Bit index="1" size="1" name="C1">
+          <Enumerations>
+            <Enumeration key="1" requires="C1"/>
+          </Enumerations>
+        </Bit>
+        <Bit index="2" size="1" name="C2">
+          <Enumerations>
+            <Enumeration key="1" requires="C2"/>
+          </Enumerations>
+        </Bit>
+        <Bit index="3" size="1" name="C3">
+          <Enumerations>
+            <Enumeration key="1" requires="C3"/>
+          </Enumerations>
+        </Bit>
+        <Bit index="4" size="1" name="C4">
+          <Enumerations>
+            <Enumeration key="1" requires="C4"/>
+          </Enumerations>
+        </Bit>
+        <Bit index="5" size="1" name="C5">
+          <Enumerations>
+            <Enumeration key="1" requires="C5"/>
+          </Enumerations>
+        </Bit>
+      </BitField>
+    </Field>
+    <Field name="External Source Power">
+      <Format>medfloat16</Format>
+      <Unit>org.bluetooth.unit.power.watt</Unit>
+      <Requirement>C0</Requirement>
+    </Field>
+    <Field name="Present Voltage">
+      <Format>medfloat16</Format>
+      <Unit>org.bluetooth.unit.electric_potential_difference.volt</Unit>
+      <Requirement>C1</Requirement>
+    </Field>
+    <Field name="Available Energy">
+      <Format>medfloat16</Format>
+      <Unit>org.bluetooth.unit.energy.kilowatt_hour</Unit>
+      <Requirement>C2</Requirement>
+    </Field>
+    <Field name="Available Battery Capacity">
+      <Format>medfloat16</Format>
+      <Unit>org.bluetooth.unit.energy.kilowatt_hour</Unit>
+      <Requirement>C3</Requirement>
+    </Field>
+    <Field name="Charge Rate">
+      <Format>medfloat16</Format>
+      <Unit>org.bluetooth.unit.power.watt</Unit>
+      <Requirement>C4</Requirement>
+    </Field>
+    <Field name="Available Energy at Last Charge">
+      <Format>medfloat16</Format>
+      <Unit>org.bluetooth.unit.energy.kilowatt_hour</Unit>
+      <Requirement>C5</Requirement>
+    </Field>
+  </Value>
+</Characteristic>

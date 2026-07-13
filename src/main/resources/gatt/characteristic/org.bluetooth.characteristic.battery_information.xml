@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Battery Information" type="org.bluetooth.characteristic.battery_information" uuid="2BEC" approved="No">
+  <Value>
+    <Field name="Flags">
+      <BitField>
+        <Bit index="0" size="1" name="C0">
+          <Enumerations>
+            <Enumeration key="1" requires="C0"/>
+          </Enumerations>
+        </Bit>
+        <Bit index="1" size="1" name="C1">
+          <Enumerations>
+            <Enumeration key="1" requires="C1"/>
+          </Enumerations>
+        </Bit>
+        <Bit index="2" size="1" name="C2">
+          <Enumerations>
+            <Enumeration key="1" requires="C2"/>
+          </Enumerations>
+        </Bit>
+        <Bit index="3" size="1" name="C3">
+          <Enumerations>
+            <Enumeration key="1" requires="C3"/>
+          </Enumerations>
+        </Bit>
+        <Bit index="4" size="1" name="C4">
+          <Enumerations>
+            <Enumeration key="1" requires="C4"/>
+          </Enumerations>
+        </Bit>
+        <Bit index="5" size="1" name="C5">
+          <Enumerations>
+            <Enumeration key="1" requires="C5"/>
+          </Enumerations>
+        </Bit>
+        <Bit index="6" size="1" name="C6">
+          <Enumerations>
+            <Enumeration key="1" requires="C6"/>
+          </Enumerations>
+        </Bit>
+        <Bit index="7" size="1" name="C7">
+          <Enumerations>
+            <Enumeration key="1" requires="C7"/>
+          </Enumerations>
+        </Bit>
+      </BitField>
+    </Field>
+    <Field name="Battery Features">
+      <BitField>
+        <Bit index="0" size="1" name="C0">
+          <Enumerations>
+            <Enumeration key="1" requires="C0"/>
+          </Enumerations>
+        </Bit>
+        <Bit index="1" size="1" name="C1">
+          <Enumerations>
+            <Enumeration key="1" requires="C1"/>
+          </Enumerations>
+        </Bit>
+      </BitField>
+    </Field>
+    <Field name="Battery Manufacture Date">
+      <Format>uint24</Format>
+      <Unit>org.bluetooth.unit.time.day</Unit>
+      <Requirement>C0</Requirement>
+    </Field>
+    <Field name="Battery Expiration Date">
+      <Format>uint24</Format>
+      <Unit>org.bluetooth.unit.time.day</Unit>
+      <Requirement>C1</Requirement>
+    </Field>
+    <Field name="Battery Designed Capacity">
+      <Format>medfloat16</Format>
+      <Unit>org.bluetooth.unit.energy.kilowatt_hour</Unit>
+      <Requirement>C2</Requirement>
+    </Field>
+    <Field name="Battery Low Energy">
+      <Format>medfloat16</Format>
+      <Unit>org.bluetooth.unit.energy.kilowatt_hour</Unit>
+      <Requirement>C3</Requirement>
+    </Field>
+    <Field name="Battery Critical Energy">
+      <Format>medfloat16</Format>
+      <Unit>org.bluetooth.unit.energy.kilowatt_hour</Unit>
+      <Requirement>C4</Requirement>
+    </Field>
+    <Field name="Battery Chemistry">
+      <Format>uint8</Format>
+      <Requirement>C5</Requirement>
+    </Field>
+    <Field name="Nominal Voltage">
+      <Format>medfloat16</Format>
+      <Unit>org.bluetooth.unit.electric_potential_difference.volt</Unit>
+      <Requirement>C6</Requirement>
+    </Field>
+    <Field name="Battery Aggregation Group">
+      <Format>uint8</Format>
+      <Requirement>C7</Requirement>
+    </Field>
+  </Value>
+</Characteristic>

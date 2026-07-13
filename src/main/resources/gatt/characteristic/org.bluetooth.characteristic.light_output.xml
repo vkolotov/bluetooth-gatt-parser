@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Light Output" type="org.bluetooth.characteristic.light_output" uuid="2BE2" approved="No">
+  <Value>
+    <Field name="Light Output">
+      <Format>uint24</Format>
+      <Unit>org.bluetooth.unit.illuminance.lumen</Unit>
+    </Field>
+  </Value>
+</Characteristic>

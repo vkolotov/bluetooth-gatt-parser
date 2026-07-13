@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Time Millisecond 24" type="org.bluetooth.characteristic.time_millisecond_24" uuid="2B15" approved="No">
+  <Value>
+    <Field name="Time Millisecond 24">
+      <Format>uint24</Format>
+      <DecimalExponent>-3</DecimalExponent>
+      <Unit>org.bluetooth.unit.time.second</Unit>
+      <Minimum>0</Minimum>
+      <Maximum>16777.214</Maximum>
+    </Field>
+  </Value>
+</Characteristic>

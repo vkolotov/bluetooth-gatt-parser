@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Device Wearing Position" type="org.bluetooth.characteristic.device_wearing_position" uuid="2B4B" approved="No">
+  <Value>
+    <Field name="Device Wearing Position">
+      <Format>uint8</Format>
+    </Field>
+  </Value>
+</Characteristic>

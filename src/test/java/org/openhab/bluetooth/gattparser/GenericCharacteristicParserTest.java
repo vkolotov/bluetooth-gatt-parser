@@ -239,6 +239,46 @@ public class GenericCharacteristicParserTest {
     }
 
     @Test
+    public void testParseRepeatedFieldToEnd() {
+        when(twosComplementNumberFormatter.deserializeInteger(Matchers.<BitSet>any(), anyInt(), anyBoolean())).thenReturn(7);
+        // 4 bytes = two uint16 elements; repeats == 0 means consume to the end of the data.
+        byte[] data = new byte[] {1, 0, 2, 0};
+
+        List<Field> fields = new ArrayList<>();
+        fields.add(MockUtils.mockRepeatedFieldFormat("RR-Interval", "uint16", 0));
+        when(reader.getFields(characteristic)).thenReturn(fields);
+        when(characteristic.getValue().getFields()).thenReturn(fields);
+        when(characteristic.isValidForRead()).thenReturn(true);
+
+        LinkedHashMap<String, FieldHolder> result = parser.parse(characteristic, data);
+
+        assertEquals(2, result.size());
+        assertTrue(result.containsKey("RR-Interval[0]"));
+        assertTrue(result.containsKey("RR-Interval[1]"));
+        verify(twosComplementNumberFormatter, times(1)).deserializeInteger(BitSet.valueOf(data).get(0, 16), 16, false);
+        verify(twosComplementNumberFormatter, times(1)).deserializeInteger(BitSet.valueOf(data).get(16, 32), 16, false);
+    }
+
+    @Test
+    public void testParseRepeatedFieldFixedCount() {
+        when(twosComplementNumberFormatter.deserializeInteger(Matchers.<BitSet>any(), anyInt(), anyBoolean())).thenReturn(3);
+        // 3 bytes present, but the field is fixed at exactly 2 uint8 occurrences.
+        byte[] data = new byte[] {10, 20, 30};
+
+        List<Field> fields = new ArrayList<>();
+        fields.add(MockUtils.mockRepeatedFieldFormat("Sample", "uint8", 2));
+        when(reader.getFields(characteristic)).thenReturn(fields);
+        when(characteristic.getValue().getFields()).thenReturn(fields);
+        when(characteristic.isValidForRead()).thenReturn(true);
+
+        LinkedHashMap<String, FieldHolder> result = parser.parse(characteristic, data);
+
+        assertEquals(2, result.size());
+        assertTrue(result.containsKey("Sample[0]"));
+        assertTrue(result.containsKey("Sample[1]"));
+    }
+
+    @Test
     public void testParseComplexWithReferences() {
         when(twosComplementNumberFormatter.deserializeInteger(Matchers.<BitSet>any(), eq(8), eq(false))).thenReturn(10);
         // Flags for inner fields: C1, C2

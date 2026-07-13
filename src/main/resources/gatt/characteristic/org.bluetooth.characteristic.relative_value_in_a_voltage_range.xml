@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Relative Value in a Voltage Range" type="org.bluetooth.characteristic.relative_value_in_a_voltage_range" uuid="2B09" approved="No">
+  <Value>
+    <Field name="Relative Value">
+      <Reference>org.bluetooth.characteristic.percentage_8</Reference>
+    </Field>
+    <Field name="Minimum Voltage">
+      <Reference>org.bluetooth.characteristic.voltage</Reference>
+    </Field>
+    <Field name="Maximum Voltage">
+      <Reference>org.bluetooth.characteristic.voltage</Reference>
+    </Field>
+  </Value>
+</Characteristic>

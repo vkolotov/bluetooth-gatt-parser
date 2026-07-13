@@ -61,6 +61,24 @@ public class FieldHolderTest {
     }
 
     @Test
+    public void testGetBigDecimalExactDecimalScaling() {
+        // 1234 * 10^-2 must be exactly 12.34, not 12.340000000000000... — the BigDecimal path
+        // uses scaleByPowerOfTen, not Math.pow(10, e).
+        FieldHolder fieldHolder = new FieldHolder(field, 1234);
+        mockField(-2, null, null, null);
+        assertEquals(0, fieldHolder.getBigDecimal(null).compareTo(new java.math.BigDecimal("12.34")));
+        assertEquals("12.34", fieldHolder.getBigDecimal(null).stripTrailingZeros().toPlainString());
+    }
+
+    @Test
+    public void testGetBigDecimalExactBinaryScaling() {
+        // 32768 * 2^-6 = 512 exactly (e.g. the GATT Voltage characteristic, 1/64 V resolution).
+        FieldHolder fieldHolder = new FieldHolder(field, 32768);
+        mockField(null, -6, null, null);
+        assertEquals(0, fieldHolder.getBigDecimal(null).compareTo(new java.math.BigDecimal("512")));
+    }
+
+    @Test
     public void testIsNumber() throws Exception {
         FieldHolder fieldHolder = new FieldHolder(field, new Object());
         when(field.getFormat().isNumber()).thenReturn(true);

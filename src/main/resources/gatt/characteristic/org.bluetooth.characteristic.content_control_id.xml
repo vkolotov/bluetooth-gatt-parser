@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Content Control ID" type="org.bluetooth.characteristic.content_control_id" uuid="2BBA" approved="No">
+  <Value>
+    <Field name="Content Control ID">
+      <Format>uint8</Format>
+    </Field>
+  </Value>
+</Characteristic>

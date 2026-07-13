@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Humidity 8" type="org.bluetooth.characteristic.humidity_8" uuid="2C1B" approved="No">
+  <Value>
+    <Field name="Humidity 8">
+      <Format>uint8</Format>
+      <BinaryExponent>-1</BinaryExponent>
+      <Unit>org.bluetooth.unit.percentage</Unit>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+    </Field>
+  </Value>
+</Characteristic>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Voltage Frequency" type="org.bluetooth.characteristic.voltage_frequency" uuid="2BE8" approved="No">
+  <Value>
+    <Field name="Voltage Frequency">
+      <Format>uint16</Format>
+      <Unit>org.bluetooth.unit.hertz</Unit>
+      <Minimum>1</Minimum>
+      <Maximum>65533</Maximum>
+    </Field>
+  </Value>
+</Characteristic>

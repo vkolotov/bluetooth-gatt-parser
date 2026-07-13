@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Enhanced Intermediate Cuff Pressure" type="org.bluetooth.characteristic.enhanced_intermediate_cuff_pressure" uuid="2B35" approved="No">
+  <Value>
+    <Field name="Flags">
+      <BitField>
+        <Bit index="0" size="1" name="C0">
+          <Enumerations>
+            <Enumeration key="1" requires="C0"/>
+          </Enumerations>
+        </Bit>
+        <Bit index="1" size="1" name="C1">
+          <Enumerations>
+            <Enumeration key="1" requires="C1"/>
+          </Enumerations>
+        </Bit>
+        <Bit index="2" size="1" name="C2">
+          <Enumerations>
+            <Enumeration key="1" requires="C2"/>
+          </Enumerations>
+        </Bit>
+        <Bit index="3" size="1" name="C3">
+          <Enumerations>
+            <Enumeration key="1" requires="C3"/>
+          </Enumerations>
+        </Bit>
+        <Bit index="4" size="1" name="C4">
+          <Enumerations>
+            <Enumeration key="1" requires="C4"/>
+          </Enumerations>
+        </Bit>
+        <Bit index="5" size="1" name="C5">
+          <Enumerations>
+            <Enumeration key="1" requires="C5"/>
+          </Enumerations>
+        </Bit>
+        <Bit index="6" size="1" name="C6">
+          <Enumerations>
+            <Enumeration key="1" requires="C6"/>
+          </Enumerations>
+        </Bit>
+        <Bit index="7" size="1" name="C7">
+          <Enumerations>
+            <Enumeration key="1" requires="C7"/>
+          </Enumerations>
+        </Bit>
+      </BitField>
+    </Field>
+    <Field name="Intermediate Cuff Pressure Value">
+      <Format>medfloat16</Format>
+      <DecimalExponent>3</DecimalExponent>
+      <Unit>org.bluetooth.unit.pressure.millimetre_of_mercury</Unit>
+    </Field>
+    <Field name="Time Stamp">
+      <Format>uint32</Format>
+      <Requirement>C1</Requirement>
+    </Field>
+    <Field name="Pulse Rate">
+      <Format>medfloat16</Format>
+      <Unit>org.bluetooth.unit.period.beats_per_minute</Unit>
+      <Requirement>C2</Requirement>
+    </Field>
+    <Field name="User ID">
+      <Format>uint8</Format>
+      <Requirement>C3</Requirement>
+    </Field>
+    <Field name="Measurement Status">
+      <Format>16bit</Format>
+      <!-- REVIEW: flags field without bit definitions -->
+    </Field>
+    <Field name="User Facing Time">
+      <Format>uint32</Format>
+      <Requirement>C5</Requirement>
+    </Field>
+  </Value>
+</Characteristic>

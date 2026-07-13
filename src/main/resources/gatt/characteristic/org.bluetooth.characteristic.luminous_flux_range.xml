@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Luminous Flux Range" type="org.bluetooth.characteristic.luminous_flux_range" uuid="2B00" approved="No">
+  <Value>
+    <Field name="Minimum Luminous Flux">
+      <Reference>org.bluetooth.characteristic.luminous_flux</Reference>
+    </Field>
+    <Field name="Maximum Luminous Flux">
+      <Reference>org.bluetooth.characteristic.luminous_flux</Reference>
+    </Field>
+  </Value>
+</Characteristic>

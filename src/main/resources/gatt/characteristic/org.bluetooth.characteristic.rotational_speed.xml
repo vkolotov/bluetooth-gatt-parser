@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Rotational Speed" type="org.bluetooth.characteristic.rotational_speed" uuid="2C09" approved="No">
+  <Value>
+    <Field name="Rotational Speed">
+      <Format>sint32</Format>
+      <Unit>org.bluetooth.unit.rotational_speed.revolutions_per_minute</Unit>
+    </Field>
+  </Value>
+</Characteristic>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Mass Flow" type="org.bluetooth.characteristic.mass_flow" uuid="2B02" approved="No">
+  <Value>
+    <Field name="Mass Flow">
+      <Format>uint16</Format>
+      <Unit>org.bluetooth.unit.mass_flow.gram_per_second</Unit>
+      <Minimum>0</Minimum>
+      <Maximum>65534</Maximum>
+    </Field>
+  </Value>
+</Characteristic>

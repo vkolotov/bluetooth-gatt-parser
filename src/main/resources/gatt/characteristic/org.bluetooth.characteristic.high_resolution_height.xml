@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="High Resolution Height" type="org.bluetooth.characteristic.high_resolution_height" uuid="2B47" approved="No">
+  <Value>
+    <Field name="Height">
+      <Format>uint16</Format>
+      <DecimalExponent>-4</DecimalExponent>
+      <Unit>org.bluetooth.unit.length.meter</Unit>
+    </Field>
+  </Value>
+</Characteristic>

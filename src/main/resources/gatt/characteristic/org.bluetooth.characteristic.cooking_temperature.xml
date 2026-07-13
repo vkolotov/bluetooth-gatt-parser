@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Cooking Temperature" type="org.bluetooth.characteristic.cooking_temperature" uuid="2C2E" approved="No">
+  <Value>
+    <Field name="Temperature">
+      <Format>sint16</Format>
+      <DecimalExponent>-1</DecimalExponent>
+      <Unit>org.bluetooth.unit.thermodynamic_temperature.degree_celsius</Unit>
+      <Minimum>-100.0</Minimum>
+      <Maximum>1000.0</Maximum>
+    </Field>
+  </Value>
+</Characteristic>

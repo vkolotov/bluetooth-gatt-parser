@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Correlated Color Temperature" type="org.bluetooth.characteristic.correlated_color_temperature" uuid="2AE9" approved="No">
+  <Value>
+    <Field name="Correlated Color Temperature">
+      <Format>uint16</Format>
+      <Unit>org.bluetooth.unit.thermodynamic_temperature.kelvin</Unit>
+      <Minimum>800</Minimum>
+      <Maximum>65534</Maximum>
+    </Field>
+  </Value>
+</Characteristic>

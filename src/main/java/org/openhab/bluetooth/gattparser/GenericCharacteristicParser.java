@@ -90,6 +90,24 @@ public class GenericCharacteristicParser implements CharacteristicParser {
                     continue;
                 }
                 FieldFormat fieldFormat = field.getFormat();
+                if (field.isRepeated()) {
+                    // Array field (GSS uint16[n] etc.): repeat the element either a fixed number
+                    // of times or, when repeats == 0, until the data is exhausted. Elements are
+                    // exposed as indexed holders "Name[0]", "Name[1]", ...
+                    int elementSize = fieldFormat.getSize();
+                    if (elementSize == FieldFormat.FULL_SIZE || elementSize <= 0) {
+                        throw new CharacteristicFormatException(
+                                "Repeated field \"" + field.getName() + "\" must have a fixed-size element format.");
+                    }
+                    int repeats = field.getRepeats();
+                    int index = 0;
+                    while (repeats == 0 ? offset + elementSize <= raw.length * 8 : index < repeats) {
+                        result.put(field.getName() + "[" + index + "]", parseField(field, raw, offset));
+                        offset += elementSize;
+                        index++;
+                    }
+                    continue;
+                }
                 result.put(field.getName(), parseField(field, raw, offset));
                 if (fieldFormat.getSize() == FieldFormat.FULL_SIZE) {
                     // full size field, e.g. a string

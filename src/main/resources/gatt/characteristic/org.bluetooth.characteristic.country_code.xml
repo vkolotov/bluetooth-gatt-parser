@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Country Code" type="org.bluetooth.characteristic.country_code" uuid="2AEC" approved="No">
+  <Value>
+    <Field name="Country Code">
+      <Format>uint16</Format>
+      <Minimum>0</Minimum>
+      <Maximum>4095</Maximum>
+      <!-- REVIEW: scaling present but no unit found in prose -->
+    </Field>
+  </Value>
+</Characteristic>

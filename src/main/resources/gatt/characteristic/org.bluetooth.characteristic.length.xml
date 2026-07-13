@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Length" type="org.bluetooth.characteristic.length" uuid="2C0A" approved="No">
+  <Value>
+    <Field name="Length">
+      <Format>uint32</Format>
+      <DecimalExponent>-7</DecimalExponent>
+      <Unit>org.bluetooth.unit.length.metre</Unit>
+    </Field>
+  </Value>
+</Characteristic>
