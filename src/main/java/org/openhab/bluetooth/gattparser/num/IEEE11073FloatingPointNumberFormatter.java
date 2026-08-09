@@ -131,16 +131,24 @@ public class IEEE11073FloatingPointNumberFormatter implements FloatingPointNumbe
                 scaled /= 10.0;
                 exponent++;
             }
-            // Lower the exponent to keep fractional precision while the mantissa still fits.
-            while (exponent > expMin) {
-                double finer = scaled * 10.0;
-                if (Math.round(finer) > mantissaMax || Math.round(finer) < mantissaMin) {
-                    break;
+            if (Math.round(scaled) > mantissaMax || Math.round(scaled) < mantissaMin) {
+                // The value is too large for this format even at the maximum exponent. Encoding the
+                // truncated mantissa would silently wrap (and can land on the NaN sentinel), so
+                // saturate to the corresponding infinity instead.
+                mantissa = scaled > 0 ? posInfMantissa : negInfMantissa;
+                exponent = 0;
+            } else {
+                // Lower the exponent to keep fractional precision while the mantissa still fits.
+                while (exponent > expMin) {
+                    double finer = scaled * 10.0;
+                    if (Math.round(finer) > mantissaMax || Math.round(finer) < mantissaMin) {
+                        break;
+                    }
+                    scaled = finer;
+                    exponent--;
                 }
-                scaled = finer;
-                exponent--;
+                mantissa = (int) Math.round(scaled);
             }
-            mantissa = (int) Math.round(scaled);
         }
 
         BitSet result = new BitSet(mantissaSize + exponentSize);

@@ -57,6 +57,7 @@ import java.util.Set;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Matchers.any;
@@ -276,6 +277,28 @@ public class GenericCharacteristicParserTest {
         assertEquals(2, result.size());
         assertTrue(result.containsKey("Sample[0]"));
         assertTrue(result.containsKey("Sample[1]"));
+    }
+
+    @Test
+    public void testParseRepeatedFieldToEndStopsParsing() {
+        when(twosComplementNumberFormatter.deserializeInteger(Matchers.<BitSet>any(), anyInt(), anyBoolean())).thenReturn(7);
+        // 5 bytes = two whole uint16 elements plus a trailing byte that is too short for a third.
+        // The remainder belongs to the array, so no subsequent field may be parsed from it.
+        byte[] data = new byte[] {1, 0, 2, 0, 3};
+
+        List<Field> fields = new ArrayList<>();
+        fields.add(MockUtils.mockRepeatedFieldFormat("RR-Interval", "uint16", 0));
+        fields.add(MockUtils.mockFieldFormat("Trailing", "uint8"));
+        when(reader.getFields(characteristic)).thenReturn(fields);
+        when(characteristic.getValue().getFields()).thenReturn(fields);
+        when(characteristic.isValidForRead()).thenReturn(true);
+
+        LinkedHashMap<String, FieldHolder> result = parser.parse(characteristic, data);
+
+        assertEquals(2, result.size());
+        assertTrue(result.containsKey("RR-Interval[0]"));
+        assertTrue(result.containsKey("RR-Interval[1]"));
+        assertFalse(result.containsKey("Trailing"));
     }
 
     @Test

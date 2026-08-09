@@ -121,5 +121,29 @@ public class IEEE11073FloatingPointNumberFormatterTest {
         assertEquals(36.4, back, 0.001);
     }
 
+    @Test
+    public void testSerializeSFloatSaturatesOnOverflow() {
+        // Values too large for the 12-bit mantissa even at the maximum exponent must saturate to
+        // infinity rather than wrapping the truncated mantissa (0x07FF would decode as NaN).
+        for (float v : new float[] {1.0e30F, Float.MAX_VALUE}) {
+            assertEquals("SFLOAT positive overflow " + v, Float.POSITIVE_INFINITY,
+                    formatter.deserializeSFloat(formatter.serializeSFloat(v)), 0.0);
+        }
+        for (float v : new float[] {-1.0e30F, -Float.MAX_VALUE}) {
+            assertEquals("SFLOAT negative overflow " + v, Float.NEGATIVE_INFINITY,
+                    formatter.deserializeSFloat(formatter.serializeSFloat(v)), 0.0);
+        }
+    }
+
+    @Test
+    public void testSerializeFloatHandlesLargeMagnitudes() {
+        // The FLOAT 24-bit mantissa and 8-bit exponent span the whole float range, so these must
+        // round-trip as finite values rather than saturating or wrapping.
+        for (float v : new float[] {1.0e30F, -1.0e30F, Float.MAX_VALUE, -Float.MAX_VALUE}) {
+            float back = formatter.deserializeFloat(formatter.serializeFloat(v));
+            assertEquals("FLOAT round-trip " + v, v, back, Math.abs(v) * 0.001);
+        }
+    }
+
 
 }

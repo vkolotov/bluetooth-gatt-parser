@@ -106,6 +106,12 @@ public class GenericCharacteristicParser implements CharacteristicParser {
                         offset += elementSize;
                         index++;
                     }
+                    if (repeats == 0) {
+                        // "Repeat to the end of the data" consumes the remainder of the characteristic,
+                        // so any trailing bits that are too short for a whole element are not a field of
+                        // their own and no further field can be parsed at a meaningful offset.
+                        break;
+                    }
                     continue;
                 }
                 result.put(field.getName(), parseField(field, raw, offset));
