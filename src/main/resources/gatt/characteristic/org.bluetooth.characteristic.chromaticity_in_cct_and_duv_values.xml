@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Chromaticity in CCT and Duv Values" type="org.bluetooth.characteristic.chromaticity_in_cct_and_duv_values" uuid="2AE5" approved="No">
+  <Value>
+    <Field name="Correlated Color Temperature">
+      <Reference>org.bluetooth.characteristic.correlated_color_temperature</Reference>
+    </Field>
+    <Field name="Chromaticity Distance from Planckian">
+      <Reference>org.bluetooth.characteristic.chromatic_distance_from_planckian</Reference>
+    </Field>
+  </Value>
+</Characteristic>

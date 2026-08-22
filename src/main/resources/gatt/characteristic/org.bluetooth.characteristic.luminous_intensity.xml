@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Luminous Intensity" type="org.bluetooth.characteristic.luminous_intensity" uuid="2B01" approved="No">
+  <Value>
+    <Field name="Luminous Intensity">
+      <Format>uint16</Format>
+      <Unit>org.bluetooth.unit.luminous_intensity.candela</Unit>
+      <Minimum>0</Minimum>
+      <Maximum>65534</Maximum>
+    </Field>
+  </Value>
+</Characteristic>

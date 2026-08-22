@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Caloric Intake" type="org.bluetooth.characteristic.caloric_intake" uuid="2B50" approved="No">
+  <Value>
+    <Field name="Caloric Intake">
+      <Format>uint16</Format>
+      <Unit>org.bluetooth.unit.energy.kilogram_calorie</Unit>
+    </Field>
+  </Value>
+</Characteristic>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Sedentary Interval Notification" type="org.bluetooth.characteristic.sedentary_interval_notification" uuid="2B4F" approved="No">
+  <Value>
+    <Field name="Sedentary Interval Notification">
+      <Format>uint16</Format>
+      <Unit>org.bluetooth.unit.time.second</Unit>
+    </Field>
+  </Value>
+</Characteristic>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Date UTC" type="org.bluetooth.characteristic.date_utc" uuid="2AED" approved="No">
+  <Value>
+    <Field name="Date">
+      <Format>uint24</Format>
+      <Unit>org.bluetooth.unit.time.day</Unit>
+      <Minimum>1</Minimum>
+      <Maximum>16777214</Maximum>
+    </Field>
+  </Value>
+</Characteristic>

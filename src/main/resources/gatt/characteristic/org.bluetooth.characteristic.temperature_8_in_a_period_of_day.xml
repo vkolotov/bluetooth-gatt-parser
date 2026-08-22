@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Temperature 8 in a Period of Day" type="org.bluetooth.characteristic.temperature_8_in_a_period_of_day" uuid="2B0E" approved="No">
+  <Value>
+    <Field name="Temperature">
+      <Reference>org.bluetooth.characteristic.temperature_8</Reference>
+    </Field>
+    <Field name="Start Time">
+      <Reference>org.bluetooth.characteristic.time_decihour_8</Reference>
+    </Field>
+    <Field name="End Time">
+      <Reference>org.bluetooth.characteristic.time_decihour_8</Reference>
+    </Field>
+  </Value>
+</Characteristic>

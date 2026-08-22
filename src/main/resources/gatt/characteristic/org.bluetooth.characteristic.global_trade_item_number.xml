@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Global Trade Item Number" type="org.bluetooth.characteristic.global_trade_item_number" uuid="2AFA" approved="No">
+  <Value>
+    <Field name="Global Trade Item Number">
+      <Format>uint48</Format>
+    </Field>
+  </Value>
+</Characteristic>

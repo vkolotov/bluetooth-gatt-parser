@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Relative Runtime in a Correlated Color Temperature Range" type="org.bluetooth.characteristic.relative_runtime_in_a_correlated_color_temperature_range" uuid="2BE5" approved="No">
+  <Value>
+    <Field name="Relative Runtime">
+      <Reference>org.bluetooth.characteristic.percentage_8</Reference>
+    </Field>
+    <Field name="Minimum Correlated Color Temperature">
+      <Format>uint16</Format>
+    </Field>
+    <Field name="Maximum Correlated Color Temperature">
+      <Format>uint16</Format>
+    </Field>
+  </Value>
+</Characteristic>

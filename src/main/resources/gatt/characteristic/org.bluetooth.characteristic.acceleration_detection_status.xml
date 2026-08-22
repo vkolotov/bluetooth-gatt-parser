@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Acceleration Detection Status" type="org.bluetooth.characteristic.acceleration_detection_status" uuid="2C1F" approved="No">
+  <Value>
+    <Field name="Acceleration Detection Status">
+      <Format>uint8</Format>
+    </Field>
+  </Value>
+</Characteristic>

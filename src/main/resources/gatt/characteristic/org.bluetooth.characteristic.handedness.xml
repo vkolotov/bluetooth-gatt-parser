@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Handedness" type="org.bluetooth.characteristic.handedness" uuid="2B4A" approved="No">
+  <Value>
+    <Field name="Handedness">
+      <Format>uint8</Format>
+    </Field>
+  </Value>
+</Characteristic>

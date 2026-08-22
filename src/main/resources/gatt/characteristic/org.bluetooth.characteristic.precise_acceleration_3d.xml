@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Precise Acceleration - 3D" type="org.bluetooth.characteristic.precise_acceleration_3d" uuid="2C1E" approved="No">
+  <Value>
+    <Field name="Vector X">
+      <Format>sint16</Format>
+      <DecimalExponent>-3</DecimalExponent>
+      <Unit>org.bluetooth.unit.standard_acceleration_due_to_gravity</Unit>
+      <Minimum>-32.768</Minimum>
+      <Maximum>32.765</Maximum>
+    </Field>
+    <Field name="Vector Y">
+      <Format>sint16</Format>
+      <DecimalExponent>-3</DecimalExponent>
+      <Unit>org.bluetooth.unit.standard_acceleration_due_to_gravity</Unit>
+      <Minimum>-32.768</Minimum>
+      <Maximum>32.765</Maximum>
+    </Field>
+    <Field name="Vector Z">
+      <Format>sint16</Format>
+      <DecimalExponent>-3</DecimalExponent>
+      <Unit>org.bluetooth.unit.standard_acceleration_due_to_gravity</Unit>
+      <Minimum>-32.768</Minimum>
+      <Maximum>32.765</Maximum>
+    </Field>
+  </Value>
+</Characteristic>

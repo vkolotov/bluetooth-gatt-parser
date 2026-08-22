@@ -57,6 +57,7 @@ import java.util.Set;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Matchers.any;
@@ -236,6 +237,68 @@ public class GenericCharacteristicParserTest {
         verify(twosComplementNumberFormatter, times(1)).deserializeLong(BitSet.valueOf(data).get(0, 40), 40, false);
         verify(twosComplementNumberFormatter, times(1)).deserializeInteger(BitSet.valueOf(data).get(40, 64), 24, false);
 
+    }
+
+    @Test
+    public void testParseRepeatedFieldToEnd() {
+        when(twosComplementNumberFormatter.deserializeInteger(Matchers.<BitSet>any(), anyInt(), anyBoolean())).thenReturn(7);
+        // 4 bytes = two uint16 elements; repeats == 0 means consume to the end of the data.
+        byte[] data = new byte[] {1, 0, 2, 0};
+
+        List<Field> fields = new ArrayList<>();
+        fields.add(MockUtils.mockRepeatedFieldFormat("RR-Interval", "uint16", 0));
+        when(reader.getFields(characteristic)).thenReturn(fields);
+        when(characteristic.getValue().getFields()).thenReturn(fields);
+        when(characteristic.isValidForRead()).thenReturn(true);
+
+        LinkedHashMap<String, FieldHolder> result = parser.parse(characteristic, data);
+
+        assertEquals(2, result.size());
+        assertTrue(result.containsKey("RR-Interval[0]"));
+        assertTrue(result.containsKey("RR-Interval[1]"));
+        verify(twosComplementNumberFormatter, times(1)).deserializeInteger(BitSet.valueOf(data).get(0, 16), 16, false);
+        verify(twosComplementNumberFormatter, times(1)).deserializeInteger(BitSet.valueOf(data).get(16, 32), 16, false);
+    }
+
+    @Test
+    public void testParseRepeatedFieldFixedCount() {
+        when(twosComplementNumberFormatter.deserializeInteger(Matchers.<BitSet>any(), anyInt(), anyBoolean())).thenReturn(3);
+        // 3 bytes present, but the field is fixed at exactly 2 uint8 occurrences.
+        byte[] data = new byte[] {10, 20, 30};
+
+        List<Field> fields = new ArrayList<>();
+        fields.add(MockUtils.mockRepeatedFieldFormat("Sample", "uint8", 2));
+        when(reader.getFields(characteristic)).thenReturn(fields);
+        when(characteristic.getValue().getFields()).thenReturn(fields);
+        when(characteristic.isValidForRead()).thenReturn(true);
+
+        LinkedHashMap<String, FieldHolder> result = parser.parse(characteristic, data);
+
+        assertEquals(2, result.size());
+        assertTrue(result.containsKey("Sample[0]"));
+        assertTrue(result.containsKey("Sample[1]"));
+    }
+
+    @Test
+    public void testParseRepeatedFieldToEndStopsParsing() {
+        when(twosComplementNumberFormatter.deserializeInteger(Matchers.<BitSet>any(), anyInt(), anyBoolean())).thenReturn(7);
+        // 5 bytes = two whole uint16 elements plus a trailing byte that is too short for a third.
+        // The remainder belongs to the array, so no subsequent field may be parsed from it.
+        byte[] data = new byte[] {1, 0, 2, 0, 3};
+
+        List<Field> fields = new ArrayList<>();
+        fields.add(MockUtils.mockRepeatedFieldFormat("RR-Interval", "uint16", 0));
+        fields.add(MockUtils.mockFieldFormat("Trailing", "uint8"));
+        when(reader.getFields(characteristic)).thenReturn(fields);
+        when(characteristic.getValue().getFields()).thenReturn(fields);
+        when(characteristic.isValidForRead()).thenReturn(true);
+
+        LinkedHashMap<String, FieldHolder> result = parser.parse(characteristic, data);
+
+        assertEquals(2, result.size());
+        assertTrue(result.containsKey("RR-Interval[0]"));
+        assertTrue(result.containsKey("RR-Interval[1]"));
+        assertFalse(result.containsKey("Trailing"));
     }
 
     @Test

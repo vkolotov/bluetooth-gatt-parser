@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Methane Concentration" type="org.bluetooth.characteristic.methane_concentration" uuid="2BD1" approved="No">
+  <Value>
+    <Field name="Methane Concentration">
+      <Format>medfloat16</Format>
+      <Unit>org.bluetooth.unit.concentration.parts_per_billion</Unit>
+    </Field>
+  </Value>
+</Characteristic>

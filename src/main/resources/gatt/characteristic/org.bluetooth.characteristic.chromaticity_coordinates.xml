@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Chromaticity Coordinates" type="org.bluetooth.characteristic.chromaticity_coordinates" uuid="2AE4" approved="No">
+  <Value>
+    <Field name="Chromaticity x-coordinate">
+      <Reference>org.bluetooth.characteristic.chromaticity_coordinate</Reference>
+    </Field>
+    <Field name="Chromaticity y-coordinate">
+      <Reference>org.bluetooth.characteristic.chromaticity_coordinate</Reference>
+    </Field>
+  </Value>
+</Characteristic>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Linear Position" type="org.bluetooth.characteristic.linear_position" uuid="2C08" approved="No">
+  <Value>
+    <Field name="Linear Position">
+      <Format>sint32</Format>
+      <DecimalExponent>-7</DecimalExponent>
+      <Unit>org.bluetooth.unit.length.metre</Unit>
+    </Field>
+  </Value>
+</Characteristic>

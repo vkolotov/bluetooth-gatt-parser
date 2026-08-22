@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Time Exponential 8" type="org.bluetooth.characteristic.time_exponential_8" uuid="2B13" approved="No">
+  <Value>
+    <Field name="Time Exponential 8">
+      <Format>uint8</Format>
+      <Unit>org.bluetooth.unit.time.second</Unit>
+      <Minimum>0.0</Minimum>
+      <Maximum>66560641</Maximum>
+    </Field>
+  </Value>
+</Characteristic>

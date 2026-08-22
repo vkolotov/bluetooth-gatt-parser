@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Cooking Step Status" type="org.bluetooth.characteristic.cooking_step_status" uuid="2C28" approved="No">
+  <Value>
+    <Field name="Flags">
+      <BitField>
+      </BitField>
+    </Field>
+    <Field name="Cooking Step Index">
+      <Format>uint16</Format>
+    </Field>
+    <Field name="Remaining Time">
+      <Format>uint16</Format>
+    </Field>
+  </Value>
+</Characteristic>

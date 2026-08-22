@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Time Decihour 8" type="org.bluetooth.characteristic.time_decihour_8" uuid="2B12" approved="No">
+  <Value>
+    <Field name="Time Decihour 8">
+      <Format>uint8</Format>
+      <DecimalExponent>-1</DecimalExponent>
+      <Unit>org.bluetooth.unit.time.hour</Unit>
+      <Minimum>0.0</Minimum>
+      <Maximum>23.9</Maximum>
+    </Field>
+  </Value>
+</Characteristic>

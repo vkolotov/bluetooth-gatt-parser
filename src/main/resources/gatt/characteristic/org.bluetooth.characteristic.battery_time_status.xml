@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Battery Time Status" type="org.bluetooth.characteristic.battery_time_status" uuid="2BEE" approved="No">
+  <Value>
+    <Field name="Flags">
+      <BitField>
+        <Bit index="0" size="1" name="C0">
+          <Enumerations>
+            <Enumeration key="1" requires="C0"/>
+          </Enumerations>
+        </Bit>
+        <Bit index="1" size="1" name="C1">
+          <Enumerations>
+            <Enumeration key="1" requires="C1"/>
+          </Enumerations>
+        </Bit>
+      </BitField>
+    </Field>
+    <Field name="Time until Discharged">
+      <Format>uint24</Format>
+      <Unit>org.bluetooth.unit.time.minute</Unit>
+    </Field>
+    <Field name="Time until Discharged on Standby">
+      <Format>uint24</Format>
+      <Unit>org.bluetooth.unit.time.minute</Unit>
+      <Requirement>C0</Requirement>
+    </Field>
+    <Field name="Time until Recharged">
+      <Format>uint24</Format>
+      <Unit>org.bluetooth.unit.time.minute</Unit>
+      <Requirement>C1</Requirement>
+    </Field>
+  </Value>
+</Characteristic>

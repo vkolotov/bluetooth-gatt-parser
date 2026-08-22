@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Volume Flow" type="org.bluetooth.characteristic.volume_flow" uuid="2B1B" approved="No">
+  <Value>
+    <Field name="Volume Flow">
+      <Format>uint16</Format>
+      <DecimalExponent>-3</DecimalExponent>
+      <Unit>org.bluetooth.unit.volume_flow.litre_per_second</Unit>
+      <Minimum>0</Minimum>
+      <Maximum>65534</Maximum>
+    </Field>
+  </Value>
+</Characteristic>

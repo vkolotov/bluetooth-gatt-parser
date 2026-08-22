@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Estimated Service Date" type="org.bluetooth.characteristic.estimated_service_date" uuid="2BEF" approved="No">
+  <Value>
+    <Field name="Estimated Service Date">
+      <Format>uint24</Format>
+      <Unit>org.bluetooth.unit.time.day</Unit>
+    </Field>
+  </Value>
+</Characteristic>

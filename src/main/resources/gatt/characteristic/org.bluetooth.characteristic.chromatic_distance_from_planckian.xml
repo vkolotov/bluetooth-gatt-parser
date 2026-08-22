@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Chromatic Distance from Planckian" type="org.bluetooth.characteristic.chromatic_distance_from_planckian" uuid="2AE3" approved="No">
+  <Value>
+    <Field name="Distance from Planckian">
+      <Format>sint16</Format>
+      <DecimalExponent>-5</DecimalExponent>
+      <Minimum>-0.05</Minimum>
+      <Maximum>0.05</Maximum>
+      <!-- REVIEW: scaling present but no unit found in prose -->
+    </Field>
+  </Value>
+</Characteristic>

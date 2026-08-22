@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Elapsed Time" type="org.bluetooth.characteristic.elapsed_time" uuid="2BF2" approved="No">
+  <Value>
+    <Field name="Flags">
+      <BitField>
+        <Bit index="0" size="1" name="C0">
+          <Enumerations>
+            <Enumeration key="1" requires="C0"/>
+          </Enumerations>
+        </Bit>
+        <Bit index="1" size="1" name="C1">
+          <Enumerations>
+            <Enumeration key="1" requires="C1"/>
+          </Enumerations>
+        </Bit>
+        <Bit index="4" size="1" name="C4">
+          <Enumerations>
+            <Enumeration key="1" requires="C4"/>
+          </Enumerations>
+        </Bit>
+        <Bit index="5" size="1" name="C5">
+          <Enumerations>
+            <Enumeration key="1" requires="C5"/>
+          </Enumerations>
+        </Bit>
+      </BitField>
+    </Field>
+    <Field name="Time Value">
+      <Format>uint48</Format>
+    </Field>
+    <Field name="Time Sync Source Type">
+      <Format>uint8</Format>
+    </Field>
+    <Field name="TZ/DST Offset">
+      <Format>sint8</Format>
+    </Field>
+  </Value>
+</Characteristic>

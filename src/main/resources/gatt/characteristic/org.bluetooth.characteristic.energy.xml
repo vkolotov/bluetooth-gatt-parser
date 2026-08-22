@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Energy" type="org.bluetooth.characteristic.energy" uuid="2AF2" approved="No">
+  <Value>
+    <Field name="Energy">
+      <Format>uint24</Format>
+      <Unit>org.bluetooth.unit.energy.kilowatt_hour</Unit>
+      <Minimum>0</Minimum>
+      <Maximum>16777214</Maximum>
+    </Field>
+  </Value>
+</Characteristic>

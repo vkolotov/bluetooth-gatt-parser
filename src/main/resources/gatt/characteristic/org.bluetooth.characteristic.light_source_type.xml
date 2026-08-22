@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Light Source Type" type="org.bluetooth.characteristic.light_source_type" uuid="2BE3" approved="No">
+  <Value>
+    <Field name="Light Source Type">
+      <Format>uint8</Format>
+    </Field>
+  </Value>
+</Characteristic>

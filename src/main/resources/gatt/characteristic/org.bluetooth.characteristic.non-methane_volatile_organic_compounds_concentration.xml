@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Non-Methane Volatile Organic Compounds Concentration" type="org.bluetooth.characteristic.non-methane_volatile_organic_compounds_concentration" uuid="2BD3" approved="No">
+  <Value>
+    <Field name="Non-Methane Volatile Organic Compounds Concentration">
+      <Format>medfloat16</Format>
+      <Unit>org.bluetooth.unit.density.kilogram_per_cubic_meter</Unit>
+    </Field>
+  </Value>
+</Characteristic>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="CIE 13.3-1995 Color Rendering Index" type="org.bluetooth.characteristic.cie_13_3_1995_color_rendering_index" uuid="2AE7" approved="No">
+  <Value>
+    <Field name="Color Rendering Index">
+      <Format>sint8</Format>
+      <Minimum>-128</Minimum>
+      <Maximum>100</Maximum>
+      <!-- REVIEW: scaling present but no unit found in prose -->
+    </Field>
+  </Value>
+</Characteristic>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Chromaticity Coordinate" type="org.bluetooth.characteristic.chromaticity_coordinate" uuid="2B1C" approved="No">
+  <Value>
+    <Field name="Chromaticity Coordinate">
+      <Format>uint16</Format>
+      <BinaryExponent>-16</BinaryExponent>
+      <Minimum>0</Minimum>
+      <Maximum>1.0</Maximum>
+      <!-- REVIEW: scaling present but no unit found in prose -->
+    </Field>
+  </Value>
+</Characteristic>

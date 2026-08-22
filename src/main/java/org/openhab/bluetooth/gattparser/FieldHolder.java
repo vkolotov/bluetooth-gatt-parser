@@ -161,7 +161,7 @@ public class FieldHolder {
     public BigInteger getBigInteger(BigInteger def) {
         BigDecimal result = new BigDecimalConverter(null).convert(BigDecimal.class, prepareValue());
         return result != null
-                ? result.multiply(BigDecimal.valueOf(getMultiplier()))
+                ? result.multiply(getMultiplierExact())
                         .add(BigDecimal.valueOf(getOffset())).setScale(0, RoundingMode.HALF_UP).toBigInteger()
                 : def;
     }
@@ -175,7 +175,7 @@ public class FieldHolder {
     public BigDecimal getBigDecimal(BigDecimal def) {
         BigDecimal result = new BigDecimalConverter(null).convert(BigDecimal.class, prepareValue());
         return result != null
-                ? result.multiply(BigDecimal.valueOf(getMultiplier()))
+                ? result.multiply(getMultiplierExact())
                 : def;
     }
 
@@ -581,6 +581,29 @@ public class FieldHolder {
         }
         if (field.getMultiplier() != null && field.getMultiplier() != 0) {
             multiplier *= (double) field.getMultiplier();
+        }
+        return multiplier;
+    }
+
+    /**
+     * Exact BigDecimal counterpart of {@link #getMultiplier()}. The decimal exponent is applied via
+     * {@link BigDecimal#scaleByPowerOfTen(int)} and the binary exponent via exact powers of two, so
+     * the BigDecimal paths do not inherit the rounding error of {@code Math.pow(10, e)}.
+     */
+    private BigDecimal getMultiplierExact() {
+        BigDecimal multiplier = BigDecimal.ONE;
+        if (field.getDecimalExponent() != null) {
+            multiplier = multiplier.scaleByPowerOfTen(field.getDecimalExponent());
+        }
+        if (field.getBinaryExponent() != null) {
+            int b = field.getBinaryExponent();
+            BigDecimal powerOfTwo = new BigDecimal(BigInteger.TWO.pow(Math.abs(b)));
+            multiplier = b >= 0
+                    ? multiplier.multiply(powerOfTwo)
+                    : multiplier.divide(powerOfTwo); // negative power of two is always exact (terminates in binary)
+        }
+        if (field.getMultiplier() != null && field.getMultiplier() != 0) {
+            multiplier = multiplier.multiply(BigDecimal.valueOf(field.getMultiplier()));
         }
         return multiplier;
     }

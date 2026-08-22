@@ -65,6 +65,10 @@ public class Field {
     private boolean unknown;
     @XStreamAsAttribute
     private boolean system;
+    // Repeated (array) field, from GSS types like uint16[n]. null/absent = single occurrence;
+    // 0 = repeat to end of data; N > 0 = exactly N occurrences.
+    @XStreamAsAttribute
+    private Integer repeats;
 
     public String getName() {
         return name != null ? name.trim() : null;
@@ -120,6 +124,21 @@ public class Field {
 
     public String getReference() {
         return reference;
+    }
+
+    /**
+     * Returns the repeat specification for an array field (GSS types like {@code uint16[n]}).
+     * {@code null} means a single (non-repeated) field; {@code 0} means repeat until the end of
+     * the data; a positive value means exactly that many occurrences.
+     *
+     * @return the repeat count, or null when the field is not repeated
+     */
+    public Integer getRepeats() {
+        return repeats;
+    }
+
+    public boolean isRepeated() {
+        return repeats != null;
     }
 
     public boolean isUnknown() {

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Temperature Range" type="org.bluetooth.characteristic.temperature_range" uuid="2B10" approved="No">
+  <Value>
+    <Field name="Minimum Temperature">
+      <Reference>org.bluetooth.characteristic.temperature</Reference>
+    </Field>
+    <Field name="Maximum Temperature">
+      <Reference>org.bluetooth.characteristic.temperature</Reference>
+    </Field>
+  </Value>
+</Characteristic>

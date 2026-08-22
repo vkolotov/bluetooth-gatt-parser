@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Acceleration - 3D" type="org.bluetooth.characteristic.acceleration_3d" uuid="2C1D" approved="No">
+  <Value>
+    <Field name="Vector X">
+      <Format>sint8</Format>
+      <DecimalExponent>-2</DecimalExponent>
+      <Unit>org.bluetooth.unit.standard_acceleration_due_to_gravity</Unit>
+      <Minimum>-1.28</Minimum>
+      <Maximum>1.25</Maximum>
+    </Field>
+    <Field name="Vector Y">
+      <Format>sint8</Format>
+      <DecimalExponent>-2</DecimalExponent>
+      <Unit>org.bluetooth.unit.standard_acceleration_due_to_gravity</Unit>
+      <Minimum>-1.28</Minimum>
+      <Maximum>1.25</Maximum>
+    </Field>
+    <Field name="Vector Z">
+      <Format>sint8</Format>
+      <DecimalExponent>-2</DecimalExponent>
+      <Unit>org.bluetooth.unit.standard_acceleration_due_to_gravity</Unit>
+      <Minimum>-1.28</Minimum>
+      <Maximum>1.25</Maximum>
+    </Field>
+  </Value>
+</Characteristic>

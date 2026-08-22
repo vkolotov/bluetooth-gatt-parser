@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Voltage Specification" type="org.bluetooth.characteristic.voltage_specification" uuid="2B19" approved="No">
+  <Value>
+    <Field name="Minimum Voltage Value">
+      <Reference>org.bluetooth.characteristic.voltage</Reference>
+    </Field>
+    <Field name="Typical Voltage Value">
+      <Reference>org.bluetooth.characteristic.voltage</Reference>
+    </Field>
+    <Field name="Maximum Voltage Value">
+      <Reference>org.bluetooth.characteristic.voltage</Reference>
+    </Field>
+  </Value>
+</Characteristic>

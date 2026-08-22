@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Torque" type="org.bluetooth.characteristic.torque" uuid="2C0B" approved="No">
+  <Value>
+    <Field name="Torque">
+      <Format>sint32</Format>
+      <DecimalExponent>-2</DecimalExponent>
+      <Unit>org.bluetooth.unit.moment_of_force.newton_metre</Unit>
+    </Field>
+  </Value>
+</Characteristic>

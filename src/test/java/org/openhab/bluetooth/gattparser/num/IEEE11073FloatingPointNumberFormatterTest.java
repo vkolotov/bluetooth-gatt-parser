@@ -83,24 +83,66 @@ public class IEEE11073FloatingPointNumberFormatterTest {
                 formatter.deserializeFloat(BitSet.valueOf(new long[]{IEEE11073FloatingPointNumberFormatter.FLOAT_POSITIVE_INFINITY})), 0.0);
     }
 
-    @Test(expected = IllegalStateException.class)
+    @Test
     public void testDeserializeDouble() throws Exception {
-        formatter.deserializeDouble(BitSet.valueOf(new long[]{0b10L}));
+        // No 64-bit IEEE-11073 form: deserializeDouble decodes the 32-bit FLOAT as a Double.
+        assertEquals(36.4,
+                formatter.deserializeDouble(BitSet.valueOf(new long[]{0b11111111000000000000000101101100})), 0.00001);
     }
 
-    @Test(expected = IllegalStateException.class)
+    @Test
     public void testSerializeSFloat() {
-        formatter.serializeSFloat(0.0F);
+        for (float v : new float[] {0.0F, 36.4F, -36.4F, 364F, -364F, 3.64F, 0.001F, -3640F}) {
+            float back = formatter.deserializeSFloat(formatter.serializeSFloat(v));
+            assertEquals("SFLOAT round-trip " + v, v, back, Math.max(0.001, Math.abs(v) * 0.001));
+        }
     }
 
-    @Test(expected = IllegalStateException.class)
+    @Test
+    public void testSerializeSFloatSpecialValues() {
+        assertEquals(Float.NaN, formatter.deserializeSFloat(formatter.serializeSFloat(Float.NaN)), 0.0);
+        assertEquals(Float.POSITIVE_INFINITY,
+                formatter.deserializeSFloat(formatter.serializeSFloat(Float.POSITIVE_INFINITY)), 0.0);
+        assertEquals(Float.NEGATIVE_INFINITY,
+                formatter.deserializeSFloat(formatter.serializeSFloat(Float.NEGATIVE_INFINITY)), 0.0);
+    }
+
+    @Test
     public void testSerializeFloat() {
-        formatter.serializeFloat(0.0F);
+        for (float v : new float[] {0.0F, 36.4F, -36.4F, 364F, -364F, 3.64F, 12345.678F, -3640F}) {
+            float back = formatter.deserializeFloat(formatter.serializeFloat(v));
+            assertEquals("FLOAT round-trip " + v, v, back, Math.max(0.001, Math.abs(v) * 0.001));
+        }
     }
 
-    @Test(expected = IllegalStateException.class)
+    @Test
     public void testSerializeDouble() {
-        formatter.serializeDouble(0.0);
+        double back = formatter.deserializeDouble(formatter.serializeDouble(36.4));
+        assertEquals(36.4, back, 0.001);
+    }
+
+    @Test
+    public void testSerializeSFloatSaturatesOnOverflow() {
+        // Values too large for the 12-bit mantissa even at the maximum exponent must saturate to
+        // infinity rather than wrapping the truncated mantissa (0x07FF would decode as NaN).
+        for (float v : new float[] {1.0e30F, Float.MAX_VALUE}) {
+            assertEquals("SFLOAT positive overflow " + v, Float.POSITIVE_INFINITY,
+                    formatter.deserializeSFloat(formatter.serializeSFloat(v)), 0.0);
+        }
+        for (float v : new float[] {-1.0e30F, -Float.MAX_VALUE}) {
+            assertEquals("SFLOAT negative overflow " + v, Float.NEGATIVE_INFINITY,
+                    formatter.deserializeSFloat(formatter.serializeSFloat(v)), 0.0);
+        }
+    }
+
+    @Test
+    public void testSerializeFloatHandlesLargeMagnitudes() {
+        // The FLOAT 24-bit mantissa and 8-bit exponent span the whole float range, so these must
+        // round-trip as finite values rather than saturating or wrapping.
+        for (float v : new float[] {1.0e30F, -1.0e30F, Float.MAX_VALUE, -Float.MAX_VALUE}) {
+            float back = formatter.deserializeFloat(formatter.serializeFloat(v));
+            assertEquals("FLOAT round-trip " + v, v, back, Math.abs(v) * 0.001);
+        }
     }
 
 

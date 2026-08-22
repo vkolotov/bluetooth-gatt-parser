@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Cosine of the Angle" type="org.bluetooth.characteristic.cosine_of_the_angle" uuid="2B8D" approved="No">
+  <Value>
+    <Field name="Cosine of the Angle">
+      <Format>sint8</Format>
+      <DecimalExponent>-2</DecimalExponent>
+      <Unit>org.bluetooth.unit.unitless</Unit>
+      <Minimum>-100</Minimum>
+      <Maximum>100</Maximum>
+    </Field>
+  </Value>
+</Characteristic>

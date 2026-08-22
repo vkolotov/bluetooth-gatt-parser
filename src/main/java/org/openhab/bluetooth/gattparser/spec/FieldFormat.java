@@ -37,6 +37,9 @@ public class FieldFormat {
                 put("float64", new FieldFormat("float64", FieldType.FLOAT_IEE754, 64));
                 put("sfloat", new FieldFormat("SFLOAT", FieldType.FLOAT_IEE11073, 16));
                 put("float", new FieldFormat("FLOAT", FieldType.FLOAT_IEE11073, 32));
+                // GSS (Bluetooth Specification Supplement) names for the IEEE-11073 floats.
+                put("medfloat16", new FieldFormat("medfloat16", FieldType.FLOAT_IEE11073, 16));
+                put("medfloat32", new FieldFormat("medfloat32", FieldType.FLOAT_IEE11073, 32));
                 //put("duint16", new FieldFormat("duint16", FieldType.UINT, 16));
                 put("utf8s", new FieldFormat("utf8s", FieldType.UTF8S, FULL_SIZE));
                 put("utf16s", new FieldFormat("utf16s", FieldType.UTF16S, FULL_SIZE));

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Boolean" type="org.bluetooth.characteristic.boolean" uuid="2AE2" approved="No">
+  <Value>
+    <Field name="Boolean">
+      <Format>uint8</Format>
+    </Field>
+  </Value>
+</Characteristic>

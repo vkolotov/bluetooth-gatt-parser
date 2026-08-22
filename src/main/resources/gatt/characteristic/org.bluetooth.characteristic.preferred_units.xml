@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Preferred Units" type="org.bluetooth.characteristic.preferred_units" uuid="2B46" approved="No">
+  <Value>
+    <Field name="Units" repeats="0">
+      <InformativeText>A list of 1 to 256 preferred unit UUIDs, repeated to the end of the data.</InformativeText>
+      <Format>uint16</Format>
+    </Field>
+  </Value>
+</Characteristic>

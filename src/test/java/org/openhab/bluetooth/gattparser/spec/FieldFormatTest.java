@@ -33,6 +33,9 @@ public class FieldFormatTest {
         assertFieldType("float64", FieldType.FLOAT_IEE754, 64, FieldFormat.valueOf("fLoAt64"));
         assertFieldType("SFLOAT", FieldType.FLOAT_IEE11073, 16, FieldFormat.valueOf("SFLOAT"));
         assertFieldType("FLOAT", FieldType.FLOAT_IEE11073, 32, FieldFormat.valueOf("FLOAT"));
+        // GSS aliases for the IEEE-11073 floats.
+        assertFieldType("medfloat16", FieldType.FLOAT_IEE11073, 16, FieldFormat.valueOf("meDFloat16"));
+        assertFieldType("medfloat32", FieldType.FLOAT_IEE11073, 32, FieldFormat.valueOf("meDFloat32"));
         //assertFieldType("duint16", FieldType.UINT, 16, FieldFormat.valueOf("duint16"));
         assertFieldType("utf8s", FieldType.UTF8S, FieldFormat.FULL_SIZE, FieldFormat.valueOf("uTf8s"));
         assertFieldType("utf16s", FieldType.UTF16S, FieldFormat.FULL_SIZE, FieldFormat.valueOf("Utf16s"));

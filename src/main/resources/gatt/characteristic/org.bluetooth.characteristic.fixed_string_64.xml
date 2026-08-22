@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Fixed String 64" type="org.bluetooth.characteristic.fixed_string_64" uuid="2BDE" approved="No">
+  <Value>
+    <Field name="Fixed String 64">
+      <Format>utf8s\{64\}</Format>
+    </Field>
+  </Value>
+</Characteristic>

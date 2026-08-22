@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="High Intensity Exercise Threshold" type="org.bluetooth.characteristic.high_intensity_exercise_threshold" uuid="2B4D" approved="No">
+  <Value>
+    <Field name="Field Selector">
+      <Format>uint8</Format>
+    </Field>
+    <Field name="Threshold as Energy Expenditure per Hour">
+      <Format>uint16</Format>
+      <DecimalExponent>3</DecimalExponent>
+      <Unit>org.bluetooth.unit.energy.joule</Unit>
+      <!-- REVIEW: unparsed presence condition -->
+    </Field>
+    <Field name="Threshold as Metabolic Equivalent">
+      <Format>uint8</Format>
+      <DecimalExponent>-1</DecimalExponent>
+      <Unit>org.bluetooth.unit.metabolic_equivalent</Unit>
+      <!-- REVIEW: unparsed presence condition -->
+    </Field>
+    <Field name="Threshold as Percentage of Maximum Heart Rate">
+      <Format>uint8</Format>
+      <Unit>org.bluetooth.unit.percentage</Unit>
+      <!-- REVIEW: unparsed presence condition -->
+    </Field>
+    <Field name="Threshold as Heart Rate">
+      <Format>uint8</Format>
+      <Unit>org.bluetooth.unit.period.beats_per_minute</Unit>
+      <!-- REVIEW: unparsed presence condition -->
+    </Field>
+  </Value>
+</Characteristic>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Time Second 16" type="org.bluetooth.characteristic.time_second_16" uuid="2B16" approved="No">
+  <Value>
+    <Field name="Time Second 16">
+      <Format>uint16</Format>
+      <Unit>org.bluetooth.unit.time.second</Unit>
+      <Minimum>0</Minimum>
+      <Maximum>65534</Maximum>
+    </Field>
+  </Value>
+</Characteristic>

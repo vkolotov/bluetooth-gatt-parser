@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Apparent Power" type="org.bluetooth.characteristic.apparent_power" uuid="2B8A" approved="No">
+  <Value>
+    <Field name="Apparent Power">
+      <Format>uint24</Format>
+      <DecimalExponent>-1</DecimalExponent>
+      <Minimum>0</Minimum>
+      <Maximum>1677721.3</Maximum>
+      <!-- REVIEW: scaling present but no unit found in prose -->
+    </Field>
+  </Value>
+</Characteristic>

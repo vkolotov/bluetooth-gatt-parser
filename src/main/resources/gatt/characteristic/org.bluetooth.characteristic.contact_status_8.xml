@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Contact Status 8" type="org.bluetooth.characteristic.contact_status_8" uuid="2C22" approved="No">
+  <Value>
+    <Field name="Contact 0 Status">
+      <Format>uint1</Format>
+    </Field>
+    <Field name="Contact 1 Status">
+      <Format>uint1</Format>
+    </Field>
+    <Field name="Contact 2 Status">
+      <Format>uint1</Format>
+    </Field>
+    <Field name="Contact 3 Status">
+      <Format>uint1</Format>
+    </Field>
+    <Field name="Contact 4 Status">
+      <Format>uint1</Format>
+    </Field>
+    <Field name="Contact 5 Status">
+      <Format>uint1</Format>
+    </Field>
+    <Field name="Contact 6 Status">
+      <Format>uint1</Format>
+    </Field>
+    <Field name="Contact 7 Status">
+      <Format>uint1</Format>
+    </Field>
+  </Value>
+</Characteristic>

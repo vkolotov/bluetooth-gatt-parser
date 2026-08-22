@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Illuminance 16" type="org.bluetooth.characteristic.illuminance_16" uuid="2C1C" approved="No">
+  <Value>
+    <Field name="Illuminance 16">
+      <Format>uint16</Format>
+      <Unit>org.bluetooth.unit.illuminance.lux</Unit>
+      <Minimum>0</Minimum>
+      <Maximum>65534</Maximum>
+    </Field>
+  </Value>
+</Characteristic>

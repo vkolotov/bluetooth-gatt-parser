@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Event Statistics" type="org.bluetooth.characteristic.event_statistics" uuid="2AF4" approved="No">
+  <Value>
+    <Field name="Number of Events">
+      <Reference>org.bluetooth.characteristic.count_16</Reference>
+    </Field>
+    <Field name="Average Event Duration">
+      <Reference>org.bluetooth.characteristic.time_second_16</Reference>
+    </Field>
+    <Field name="Time Elapsed Since Last Event">
+      <Reference>org.bluetooth.characteristic.time_exponential_8</Reference>
+    </Field>
+    <Field name="Sensing Duration">
+      <Reference>org.bluetooth.characteristic.time_exponential_8</Reference>
+    </Field>
+  </Value>
+</Characteristic>

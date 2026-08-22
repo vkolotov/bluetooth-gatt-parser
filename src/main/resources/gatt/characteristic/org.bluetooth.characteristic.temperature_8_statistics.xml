@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Temperature 8 Statistics" type="org.bluetooth.characteristic.temperature_8_statistics" uuid="2B0F" approved="No">
+  <Value>
+    <Field name="Average">
+      <Reference>org.bluetooth.characteristic.temperature_8</Reference>
+    </Field>
+    <Field name="Standard Deviation Value">
+      <Reference>org.bluetooth.characteristic.temperature_8</Reference>
+    </Field>
+    <Field name="Minimum Value">
+      <Reference>org.bluetooth.characteristic.temperature_8</Reference>
+    </Field>
+    <Field name="Maximum Value">
+      <Reference>org.bluetooth.characteristic.temperature_8</Reference>
+    </Field>
+    <Field name="Sensing Duration">
+      <Reference>org.bluetooth.characteristic.time_exponential_8</Reference>
+    </Field>
+  </Value>
+</Characteristic>

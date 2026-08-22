@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Relative Runtime in a Current Range" type="org.bluetooth.characteristic.relative_runtime_in_a_current_range" uuid="2B07" approved="No">
+  <Value>
+    <Field name="Relative Runtime Value">
+      <Reference>org.bluetooth.characteristic.percentage_8</Reference>
+    </Field>
+    <Field name="Minimum Current">
+      <Reference>org.bluetooth.characteristic.electric_current</Reference>
+    </Field>
+    <Field name="Maximum Current">
+      <Reference>org.bluetooth.characteristic.electric_current</Reference>
+    </Field>
+  </Value>
+</Characteristic>

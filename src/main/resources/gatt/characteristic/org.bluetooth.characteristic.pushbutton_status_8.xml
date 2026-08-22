@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Pushbutton Status 8" type="org.bluetooth.characteristic.pushbutton_status_8" uuid="2C21" approved="No">
+  <Value>
+    <Field name="Button 0 Status">
+      <Format>uint2</Format>
+    </Field>
+    <Field name="Button 1 Status">
+      <Format>uint2</Format>
+    </Field>
+    <Field name="Button 2 Status">
+      <Format>uint2</Format>
+    </Field>
+    <Field name="Button 3 Status">
+      <Format>uint2</Format>
+    </Field>
+  </Value>
+</Characteristic>

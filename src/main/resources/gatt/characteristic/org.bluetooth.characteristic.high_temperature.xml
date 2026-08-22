@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="High Temperature" type="org.bluetooth.characteristic.high_temperature" uuid="2BDF" approved="No">
+  <Value>
+    <Field name="High Temperature">
+      <Format>sint16</Format>
+      <BinaryExponent>-1</BinaryExponent>
+      <Unit>org.bluetooth.unit.thermodynamic_temperature.degree_celsius</Unit>
+    </Field>
+  </Value>
+</Characteristic>

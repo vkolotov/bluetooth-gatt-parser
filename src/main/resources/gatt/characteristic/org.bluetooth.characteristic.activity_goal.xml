@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Activity Goal" type="org.bluetooth.characteristic.activity_goal" uuid="2B4E" approved="No">
+  <Value>
+    <Field name="Presence Flags">
+      <BitField>
+        <Bit index="0" size="1" name="C0">
+          <Enumerations>
+            <Enumeration key="1" requires="C0"/>
+          </Enumerations>
+        </Bit>
+        <Bit index="1" size="1" name="C1">
+          <Enumerations>
+            <Enumeration key="1" requires="C1"/>
+          </Enumerations>
+        </Bit>
+        <Bit index="2" size="1" name="C2">
+          <Enumerations>
+            <Enumeration key="1" requires="C2"/>
+          </Enumerations>
+        </Bit>
+        <Bit index="3" size="1" name="C3">
+          <Enumerations>
+            <Enumeration key="1" requires="C3"/>
+          </Enumerations>
+        </Bit>
+        <Bit index="4" size="1" name="C4">
+          <Enumerations>
+            <Enumeration key="1" requires="C4"/>
+          </Enumerations>
+        </Bit>
+        <Bit index="5" size="1" name="C5">
+          <Enumerations>
+            <Enumeration key="1" requires="C5"/>
+          </Enumerations>
+        </Bit>
+        <Bit index="6" size="1" name="C6">
+          <Enumerations>
+            <Enumeration key="1" requires="C6"/>
+          </Enumerations>
+        </Bit>
+        <Bit index="7" size="1" name="C7">
+          <Enumerations>
+            <Enumeration key="1" requires="C7"/>
+          </Enumerations>
+        </Bit>
+      </BitField>
+    </Field>
+    <Field name="Total Energy Expenditure">
+      <Format>uint16</Format>
+      <DecimalExponent>3</DecimalExponent>
+      <Unit>org.bluetooth.unit.energy.joule</Unit>
+      <Requirement>C0</Requirement>
+    </Field>
+    <Field name="Normal Walking Steps">
+      <Format>uint24</Format>
+      <Unit>org.bluetooth.unit.unitless</Unit>
+      <Requirement>C1</Requirement>
+    </Field>
+    <Field name="Intensity Steps">
+      <Format>uint24</Format>
+      <Unit>org.bluetooth.unit.unitless</Unit>
+      <Requirement>C2</Requirement>
+    </Field>
+    <Field name="Floor Steps">
+      <Format>uint24</Format>
+      <Unit>org.bluetooth.unit.unitless</Unit>
+      <Requirement>C3</Requirement>
+    </Field>
+    <Field name="Distance">
+      <Format>uint24</Format>
+      <DecimalExponent>1</DecimalExponent>
+      <Unit>org.bluetooth.unit.length.metre</Unit>
+      <Requirement>C4</Requirement>
+    </Field>
+    <Field name="Duration of Normal Walking">
+      <Format>uint24</Format>
+      <Unit>org.bluetooth.unit.time.second</Unit>
+      <Requirement>C5</Requirement>
+    </Field>
+    <Field name="Duration of Intensity Walking">
+      <Format>uint24</Format>
+      <Unit>org.bluetooth.unit.time.second</Unit>
+      <Requirement>C6</Requirement>
+    </Field>
+  </Value>
+</Characteristic>

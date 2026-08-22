@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="VOC Concentration" type="org.bluetooth.characteristic.voc_concentration" uuid="2BE7" approved="No">
+  <Value>
+    <Field name="VOC Concentration">
+      <Format>uint16</Format>
+      <Unit>org.bluetooth.unit.ppb</Unit>
+    </Field>
+  </Value>
+</Characteristic>

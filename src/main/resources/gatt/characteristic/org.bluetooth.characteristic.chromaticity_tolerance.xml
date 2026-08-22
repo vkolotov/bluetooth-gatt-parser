@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Chromaticity Tolerance" type="org.bluetooth.characteristic.chromaticity_tolerance" uuid="2AE6" approved="No">
+  <Value>
+    <Field name="Chromaticity Tolerance">
+      <Format>uint8</Format>
+      <DecimalExponent>-4</DecimalExponent>
+      <Minimum>0</Minimum>
+      <Maximum>0.0255</Maximum>
+      <!-- REVIEW: scaling present but no unit found in prose -->
+    </Field>
+  </Value>
+</Characteristic>

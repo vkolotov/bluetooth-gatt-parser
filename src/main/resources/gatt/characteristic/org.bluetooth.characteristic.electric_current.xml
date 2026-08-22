@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Electric Current" type="org.bluetooth.characteristic.electric_current" uuid="2AEE" approved="No">
+  <Value>
+    <Field name="Current">
+      <Format>uint16</Format>
+      <DecimalExponent>-2</DecimalExponent>
+      <Unit>org.bluetooth.unit.electric_current.ampere</Unit>
+      <Minimum>0</Minimum>
+      <Maximum>655.34</Maximum>
+    </Field>
+  </Value>
+</Characteristic>

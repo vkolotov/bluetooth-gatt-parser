@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Power" type="org.bluetooth.characteristic.power" uuid="2B05" approved="No">
+  <Value>
+    <Field name="Power">
+      <Format>uint24</Format>
+      <DecimalExponent>-1</DecimalExponent>
+      <Unit>org.bluetooth.unit.power.watt</Unit>
+      <Minimum>0</Minimum>
+      <Maximum>1677721.3</Maximum>
+    </Field>
+  </Value>
+</Characteristic>

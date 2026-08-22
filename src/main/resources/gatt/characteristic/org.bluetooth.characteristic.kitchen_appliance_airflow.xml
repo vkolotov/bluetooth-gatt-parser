@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Kitchen Appliance Airflow" type="org.bluetooth.characteristic.kitchen_appliance_airflow" uuid="2C30" approved="No">
+  <Value>
+    <Field name="Kitchen Appliance Airflow">
+      <Format>uint16</Format>
+      <DecimalExponent>-3</DecimalExponent>
+      <Unit>org.bluetooth.unit.flow.cubic_metre_per_second</Unit>
+      <Minimum>0</Minimum>
+      <Maximum>65534</Maximum>
+    </Field>
+  </Value>
+</Characteristic>

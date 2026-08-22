@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Time Hour 24" type="org.bluetooth.characteristic.time_hour_24" uuid="2B14" approved="No">
+  <Value>
+    <Field name="Time Hour 24">
+      <Format>uint24</Format>
+      <Unit>org.bluetooth.unit.time.hour</Unit>
+      <Minimum>0</Minimum>
+      <Maximum>16777214</Maximum>
+    </Field>
+  </Value>
+</Characteristic>

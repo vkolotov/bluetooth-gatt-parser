@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Luminous Exposure" type="org.bluetooth.characteristic.luminous_exposure" uuid="2AFE" approved="No">
+  <Value>
+    <Field name="Luminous Exposure">
+      <Format>uint24</Format>
+      <DecimalExponent>3</DecimalExponent>
+      <Unit>org.bluetooth.unit.luminous_exposure.lux_hour</Unit>
+      <Minimum>0</Minimum>
+      <Maximum>16777214000</Maximum>
+    </Field>
+  </Value>
+</Characteristic>

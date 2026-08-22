@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                name="Noise" type="org.bluetooth.characteristic.noise" uuid="2BE4" approved="No">
+  <Value>
+    <Field name="Noise">
+      <Format>uint8</Format>
+      <Unit>org.bluetooth.unit.sound_pressure.decibel_spl</Unit>
+    </Field>
+  </Value>
+</Characteristic>
